@@ -50,7 +50,7 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@ToolHub" />
+      <meta name="twitter:site" content="@ToolsCrush" />
 
       {/* Additional SEO */}
       <meta name="language" content="English" />
