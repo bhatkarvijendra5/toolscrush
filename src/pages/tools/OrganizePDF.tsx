@@ -157,7 +157,7 @@ const OrganizePDF = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `organized-${Date.now()}.pdf`;
+      a.download = `ToolsCrush_organized-${Date.now()}.pdf`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -211,7 +211,7 @@ const OrganizePDF = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `extracted-pages-${Date.now()}.pdf`;
+      a.download = `ToolsCrush_extracted-pages-${Date.now()}.pdf`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

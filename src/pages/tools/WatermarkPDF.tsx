@@ -216,7 +216,7 @@ const WatermarkPDF = () => {
       
       const link = document.createElement("a");
       link.href = url;
-      link.download = `watermarked-${file.name}`;
+      link.download = `ToolsCrush_watermarked-${file.name}`;
       link.click();
       
       URL.revokeObjectURL(url);

@@ -75,7 +75,7 @@ const UnlockPDF = () => {
           const url = URL.createObjectURL(blob);
           const a = document.createElement("a");
           a.href = url;
-          a.download = data.fileName;
+          a.download = `ToolsCrush_${data.fileName}`;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);

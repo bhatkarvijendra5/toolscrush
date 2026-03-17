@@ -136,7 +136,7 @@ const PDFToPPT = () => {
         });
       }
 
-      await pptx.writeFile({ fileName: file.name.replace(".pdf", ".pptx") });
+      await pptx.writeFile({ fileName: `ToolsCrush_${file.name.replace(".pdf", ".pptx")}` });
 
       toast({
         title: "Conversion Complete",

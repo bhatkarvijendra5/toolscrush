@@ -214,8 +214,8 @@ const SplitPDF = () => {
       // Generate filename with page range
       const pageNumbers = selectedPages.map(p => p.pageNumber);
       const fileName = selectedPages.length === pages.length 
-        ? `pdftools-split-all-pages.pdf`
-        : `pdftools-split-pages-${Math.min(...pageNumbers)}-to-${Math.max(...pageNumbers)}.pdf`;
+        ? `ToolsCrush_split-all-pages.pdf`
+        : `ToolsCrush_split-pages-${Math.min(...pageNumbers)}-to-${Math.max(...pageNumbers)}.pdf`;
       
       a.download = fileName;
       a.style.display = 'none';

@@ -166,7 +166,7 @@ const MergePDF = () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `merged-pdf-${Date.now()}.pdf`;
+      link.download = `ToolsCrush_merged-pdf-${Date.now()}.pdf`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

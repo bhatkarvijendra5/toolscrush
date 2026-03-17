@@ -113,7 +113,7 @@ const DocumentAnalyzer = () => {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `${baseFileName}.docx`;
+        a.download = `ToolsCrush_${baseFileName}.docx`;
         a.click();
         URL.revokeObjectURL(url);
         toast.success("Downloaded as DOCX");
@@ -193,7 +193,7 @@ const DocumentAnalyzer = () => {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `${baseFileName}.pdf`;
+        a.download = `ToolsCrush_${baseFileName}.pdf`;
         a.click();
         URL.revokeObjectURL(url);
         toast.success("Downloaded as PDF");
@@ -208,11 +208,11 @@ const DocumentAnalyzer = () => {
         case "excel":
           const csvContent = extractedText.split('\n').map(line => `"${line.replace(/"/g, '""')}"`).join('\n');
           blob = new Blob([csvContent], { type: 'text/csv' });
-          fileName = `${baseFileName}.csv`;
+          fileName = `ToolsCrush_${baseFileName}.csv`;
           break;
         default:
           blob = new Blob([extractedText], { type: 'text/plain' });
-          fileName = `${baseFileName}.txt`;
+          fileName = `ToolsCrush_${baseFileName}.txt`;
       }
 
       const url = URL.createObjectURL(blob);

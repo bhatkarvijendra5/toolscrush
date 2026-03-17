@@ -90,7 +90,7 @@ const PDFToJPG = () => {
   const downloadSingleImage = (image: PageImage) => {
     const a = document.createElement("a");
     a.href = image.dataUrl;
-    a.download = `page-${String(image.pageNumber).padStart(3, "0")}.jpg`;
+    a.download = `ToolsCrush_page-${String(image.pageNumber).padStart(3, "0")}.jpg`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -113,7 +113,7 @@ const PDFToJPG = () => {
       const url = URL.createObjectURL(content);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `pdf-to-jpg-${Date.now()}.zip`;
+      a.download = `ToolsCrush_pdf-to-jpg-${Date.now()}.zip`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
