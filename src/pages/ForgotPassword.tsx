@@ -61,7 +61,7 @@ const ForgotPassword = () => {
         title="Forgot Password"
         description="Reset your ToolsCrush account password. Enter your email to receive a secure password reset link."
         keywords="forgot password, reset password, password recovery, account recovery"
-        canonicalUrl="https://toolhub.com/forgot-password"
+        canonicalUrl="https://toolscrush.com/forgot-password"
       />
       <Header />
       <main className="flex-1">

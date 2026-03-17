@@ -208,7 +208,7 @@ const PrivacyPolicy = () => {
                     handle your data, please contact us at:
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-4">
-                    Email: privacy@toolhub.com
+                    Email: privacy@toolscrush.com
                     <br />
                     Address: 123 Tech Street, San Francisco, CA 94105
                   </p>

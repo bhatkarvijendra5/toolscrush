@@ -55,7 +55,7 @@ const SEO = ({
       {/* Additional SEO */}
       <meta name="language" content="English" />
       <meta name="revisit-after" content="3 days" />
-      <meta name="author" content="ToolHub" />
+      <meta name="author" content="ToolsCrush" />
       <meta httpEquiv="content-language" content="en" />
     </Helmet>
   );

@@ -12,7 +12,7 @@ const Index = () => {
         title="Professional PDF & Image Tools"
         description="Free online PDF and image tools. Merge, split, compress PDFs and convert images with professional-grade quality. Fast, secure, and easy to use."
         keywords="PDF tools, merge PDF, split PDF, compress PDF, PDF to Word, Word to PDF, image converter, PDF converter, online PDF tools"
-        canonicalUrl="https://toolhub.com/"
+        canonicalUrl="https://toolscrush.com/"
       />
       <StructuredData type="organization" />
       <StructuredData type="website" />

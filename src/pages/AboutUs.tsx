@@ -132,7 +132,7 @@ const AboutUs = () => {
               <Card className="p-8">
                 <h2 className="mb-4 text-2xl font-semibold">Our Tools</h2>
                 <p className="mb-4 text-muted-foreground leading-relaxed">
-                  ToolHub offers a comprehensive suite of PDF and image tools
+                  ToolsCrush offers a comprehensive suite of PDF and image tools
                   designed to handle your everyday document needs:
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">

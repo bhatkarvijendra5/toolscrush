@@ -77,7 +77,7 @@ const Blog = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-8 md:mb-12">
               <h1 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                ToolHub Blog
+                ToolsCrush Blog
               </h1>
               <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
                 Tips, tutorials, and insights for working with PDFs and images

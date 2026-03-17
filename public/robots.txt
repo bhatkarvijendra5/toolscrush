@@ -16,4 +16,4 @@ User-agent: *
 Allow: /
 Crawl-delay: 2
 
-Sitemap: https://toolhub.com/sitemap.xml
+Sitemap: https://toolscrush.com/sitemap.xml

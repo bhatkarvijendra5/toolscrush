@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-6 md:mt-8 border-t pt-6 md:pt-8 text-center text-xs md:text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ToolHub. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ToolsCrush. All rights reserved.</p>
         </div>
       </div>
     </footer>

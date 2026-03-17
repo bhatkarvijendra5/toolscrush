@@ -45,11 +45,11 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60" role="banner">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="flex items-center space-x-2" aria-label="ToolHub - Home">
+        <Link to="/" className="flex items-center space-x-2" aria-label="ToolsCrush - Home">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-primary shadow-lg">
             <FileText className="h-6 w-6 text-white" aria-hidden="true" />
           </div>
-          <span className="text-xl font-bold">ToolHub</span>
+          <span className="text-xl font-bold">ToolsCrush</span>
         </Link>
 
         {/* Desktop Navigation */}

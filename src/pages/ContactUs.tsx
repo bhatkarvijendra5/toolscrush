@@ -172,7 +172,7 @@ const ContactUs = () => {
                       <div>
                         <p className="text-sm font-medium">Email</p>
                         <a
-                          href="mailto:support@toolhub.com"
+                          href="mailto:support@toolscrush.com"
                           className="text-sm text-muted-foreground hover:text-primary"
                         >
                           support@toolscrush.com
