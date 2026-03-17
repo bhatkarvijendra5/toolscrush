@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.sign-pdf]
 verify_jwt = false
+
+[functions.submit-contact]
+verify_jwt = false

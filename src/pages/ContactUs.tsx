@@ -27,24 +27,23 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from("contact_submissions")
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-          },
-        ]);
+      const { data, error } = await supabase.functions.invoke("submit-contact", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+      });
 
       if (error) throw error;
+      if (data?.error) throw new Error(data.error);
 
       toast.success("Message sent successfully! We'll get back to you soon.");
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting form:", error);
-      toast.error("Failed to send message. Please try again.");
+      toast.error(error?.message || "Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
