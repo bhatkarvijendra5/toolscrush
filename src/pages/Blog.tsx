@@ -69,7 +69,7 @@ const Blog = () => {
         title="Blog - PDF & Image Tools Tips & Tutorials"
         description="Discover tips, tutorials, and best practices for working with PDFs and images. Learn how to optimize your document workflow with ToolsCrush."
         keywords="PDF tips, image optimization, document management, file conversion, productivity tips"
-        canonicalUrl="https://toolhub.com/blog"
+        canonicalUrl="https://toolscrush.com/blog"
       />
       <Header />
       <main className="flex-1">
