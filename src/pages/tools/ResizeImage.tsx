@@ -132,7 +132,7 @@ const ResizeImage = () => {
       const link = document.createElement("a");
       const fileName = file?.name.replace(/\.[^/.]+$/, "") || "resized-image";
       const extension = outputFormat === "image/jpeg" ? "jpg" : "png";
-      link.download = `${fileName}-${width}x${height}.${extension}`;
+      link.download = `ToolsCrush_${fileName}-${width}x${height}.${extension}`;
       link.href = url;
       link.click();
       URL.revokeObjectURL(url);

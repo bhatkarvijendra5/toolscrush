@@ -200,7 +200,7 @@ const AddPageNumbers = () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = file.name.replace(".pdf", "_numbered.pdf");
+      link.download = `ToolsCrush_${file.name.replace(".pdf", "_numbered.pdf")}`;
       link.click();
       URL.revokeObjectURL(url);
 
