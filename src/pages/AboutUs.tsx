@@ -88,7 +88,7 @@ const AboutUs = () => {
                   </p>
                   <p>
                     Our team of developers and designers came together to create
-                    ToolHub—a platform that combines ease of use with powerful
+                    ToolsCrush—a platform that combines ease of use with powerful
                     functionality. We've built tools that work directly in your
                     browser, keeping your data secure and your workflow smooth.
                   </p>
