@@ -49,10 +49,10 @@ const PrivacyPolicy = () => {
                 <section>
                   <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    At ToolHub, we take your privacy seriously. This Privacy
+                    At ToolsCrush, we take your privacy seriously. This Privacy
                     Policy explains how we collect, use, store, and protect your
                     personal information when you use our website and services.
-                    By using ToolHub, you agree to the practices described in
+                    By using ToolsCrush, you agree to the practices described in
                     this policy.
                   </p>
                 </section>
