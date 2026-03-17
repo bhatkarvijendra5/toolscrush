@@ -313,7 +313,7 @@ const ImageResizer = () => {
                     <p className="text-xs text-muted-foreground">
                       {img.width}×{img.height} • {formatSize(img.originalSize)}
                       {img.compressedSize != null && (
-                        <span className="text-green-600 dark:text-green-400 ml-2">
+                        <span className="text-primary ml-2">
                           → {formatSize(img.compressedSize)} ({Math.round((1 - img.compressedSize / img.originalSize) * 100)}% smaller)
                         </span>
                       )}
