@@ -175,7 +175,7 @@ const ContactUs = () => {
                           href="mailto:support@toolhub.com"
                           className="text-sm text-muted-foreground hover:text-primary"
                         >
-                          support@toolhub.com
+                          support@toolscrush.com
                         </a>
                       </div>
                     </div>
