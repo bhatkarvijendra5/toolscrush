@@ -262,7 +262,7 @@ const ImageResizer = () => {
                           <>
                             <span>→</span>
                             <span className="text-primary font-semibold">{formatSize(img.compressedSize)}</span>
-                            <span className="text-green-600 font-semibold">
+                            <span className="text-primary font-semibold">
                               ({Math.round((1 - img.compressedSize / img.originalSize) * 100)}% smaller)
                             </span>
                           </>
