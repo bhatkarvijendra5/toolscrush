@@ -1,0 +1,1 @@
+DROP POLICY "Anyone can submit contact form" ON public.contact_submissions;
