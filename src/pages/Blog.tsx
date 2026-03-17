@@ -10,7 +10,7 @@ const blogPosts = [
     id: 1,
     title: "How to Merge PDF Files: A Complete Guide",
     excerpt: "Learn the best practices for combining multiple PDF documents into a single file. Discover tips for maintaining quality and organization.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-15",
     slug: "how-to-merge-pdf-files",
     category: "PDF Tips",
@@ -19,7 +19,7 @@ const blogPosts = [
     id: 2,
     title: "Image Compression Techniques for Web Performance",
     excerpt: "Optimize your website's loading speed with effective image compression. Find out which formats and quality settings work best.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-10",
     slug: "image-compression-techniques",
     category: "Image Tools",
@@ -28,7 +28,7 @@ const blogPosts = [
     id: 3,
     title: "PDF to Word Conversion: Maintaining Formatting",
     excerpt: "Converting PDFs to Word documents while preserving layouts, fonts, and images. Tips for professional document conversion.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-05",
     slug: "pdf-to-word-conversion",
     category: "PDF Tips",
@@ -37,7 +37,7 @@ const blogPosts = [
     id: 4,
     title: "Protecting Your PDFs: Security Best Practices",
     excerpt: "Secure your sensitive documents with password protection. Learn about encryption standards and document security.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-28",
     slug: "protecting-pdfs-security",
     category: "Security",
@@ -46,7 +46,7 @@ const blogPosts = [
     id: 5,
     title: "Batch Processing: Working with Multiple PDFs",
     excerpt: "Save time by processing multiple PDF files at once. Discover efficient workflows for document management.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-20",
     slug: "batch-processing-pdfs",
     category: "Productivity",
@@ -55,7 +55,7 @@ const blogPosts = [
     id: 6,
     title: "Image Format Guide: JPG vs PNG vs WEBP",
     excerpt: "Choose the right image format for your needs. Compare quality, file size, and browser support across different formats.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-15",
     slug: "image-format-guide",
     category: "Image Tools",
@@ -67,9 +67,9 @@ const Blog = () => {
     <div className="flex min-h-screen flex-col">
       <SEO
         title="Blog - PDF & Image Tools Tips & Tutorials"
-        description="Discover tips, tutorials, and best practices for working with PDFs and images. Learn how to optimize your document workflow with ToolHub."
+        description="Discover tips, tutorials, and best practices for working with PDFs and images. Learn how to optimize your document workflow with ToolsCrush."
         keywords="PDF tips, image optimization, document management, file conversion, productivity tips"
-        canonicalUrl="https://toolhub.com/blog"
+        canonicalUrl="https://toolscrush.com/blog"
       />
       <Header />
       <main className="flex-1">
@@ -77,7 +77,7 @@ const Blog = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-8 md:mb-12">
               <h1 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                ToolHub Blog
+                ToolsCrush Blog
               </h1>
               <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
                 Tips, tutorials, and insights for working with PDFs and images

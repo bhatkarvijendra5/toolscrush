@@ -169,9 +169,9 @@ const Auth = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="Sign In / Sign Up"
-        description="Sign in to your ToolHub account or create a new account. Access all premium PDF and image tools with your account."
-        keywords="sign in, sign up, login, register, create account, ToolHub account"
-        canonicalUrl="https://toolhub.com/auth"
+        description="Sign in to your ToolsCrush account or create a new account. Access all premium PDF and image tools with your account."
+        keywords="sign in, sign up, login, register, create account, ToolsCrush account"
+        canonicalUrl="https://toolscrush.com/auth"
       />
       <Header />
       <main className="flex-1">
@@ -186,7 +186,7 @@ const Auth = () => {
           <div className="mx-auto max-w-md">
             <Card className="p-8">
               <h1 className="mb-6 text-center text-3xl font-bold">
-                Welcome to ToolHub
+                Welcome to ToolsCrush
               </h1>
 
               <Tabs defaultValue="login" className="w-full">

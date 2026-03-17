@@ -44,9 +44,9 @@ const AboutUs = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="About Us"
-        description="Learn about ToolHub's mission to make document and image management simple and accessible for everyone. Discover our professional PDF and image tools."
-        keywords="about ToolHub, document management, PDF tools, image tools, online tools"
-        canonicalUrl="https://toolhub.com/about"
+        description="Learn about ToolsCrush's mission to make document and image management simple and accessible for everyone. Discover our professional PDF and image tools."
+        keywords="about ToolsCrush, document management, PDF tools, image tools, online tools"
+        canonicalUrl="https://toolscrush.com/about"
       />
       <StructuredData 
         type="breadcrumb"
@@ -75,7 +75,7 @@ const AboutUs = () => {
                 <h2 className="mb-4 text-2xl font-semibold">Our Story</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    ToolHub was born from a simple idea: everyone should have
+                    ToolsCrush was born from a simple idea: everyone should have
                     access to professional-grade document and image tools without
                     the hassle of expensive software or complicated installations.
                   </p>
@@ -88,7 +88,7 @@ const AboutUs = () => {
                   </p>
                   <p>
                     Our team of developers and designers came together to create
-                    ToolHub—a platform that combines ease of use with powerful
+                    ToolsCrush—a platform that combines ease of use with powerful
                     functionality. We've built tools that work directly in your
                     browser, keeping your data secure and your workflow smooth.
                   </p>
@@ -103,7 +103,7 @@ const AboutUs = () => {
                   management. We believe that powerful tools shouldn't be locked
                   behind paywalls or complicated interfaces. Whether you're a
                   student working on an assignment, a professional preparing
-                  documents for a client, or anyone in between, ToolHub is here
+                  documents for a client, or anyone in between, ToolsCrush is here
                   to make your life easier.
                 </p>
               </Card>
@@ -132,7 +132,7 @@ const AboutUs = () => {
               <Card className="p-8">
                 <h2 className="mb-4 text-2xl font-semibold">Our Tools</h2>
                 <p className="mb-4 text-muted-foreground leading-relaxed">
-                  ToolHub offers a comprehensive suite of PDF and image tools
+                  ToolsCrush offers a comprehensive suite of PDF and image tools
                   designed to handle your everyday document needs:
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">

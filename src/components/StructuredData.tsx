@@ -25,18 +25,18 @@ const StructuredData = ({
   toolDescription,
   howToSteps
 }: StructuredDataProps) => {
-  const baseUrl = "https://toolhub.com";
+  const baseUrl = "https://toolscrush.com";
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "ToolHub",
+    name: "ToolsCrush",
     url: baseUrl,
     logo: `${baseUrl}/favicon.ico`,
     description: "Professional PDF and image tools for everyone. Free, fast, and secure document processing online.",
     sameAs: [
-      "https://twitter.com/ToolHub",
-      "https://facebook.com/ToolHub",
+      "https://twitter.com/ToolsCrush",
+      "https://facebook.com/ToolsCrush",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -49,7 +49,7 @@ const StructuredData = ({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "ToolHub",
+    name: "ToolsCrush",
     url: baseUrl,
     description: "Free online PDF and image tools. Merge, split, compress PDFs and convert images with professional-grade quality.",
     potentialAction: {
@@ -62,7 +62,7 @@ const StructuredData = ({
     },
     publisher: {
       "@type": "Organization",
-      name: "ToolHub",
+      name: "ToolsCrush",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/favicon.ico`

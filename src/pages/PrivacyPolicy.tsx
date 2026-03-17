@@ -17,9 +17,9 @@ const PrivacyPolicy = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="Privacy Policy"
-        description="Read ToolHub's privacy policy. Learn how we protect your data and ensure your privacy when using our PDF and image tools."
-        keywords="privacy policy, data protection, user privacy, ToolHub privacy"
-        canonicalUrl="https://toolhub.com/privacy"
+        description="Read ToolsCrush's privacy policy. Learn how we protect your data and ensure your privacy when using our PDF and image tools."
+        keywords="privacy policy, data protection, user privacy, ToolsCrush privacy"
+        canonicalUrl="https://toolscrush.com/privacy"
       />
       <StructuredData 
         type="breadcrumb"
@@ -49,10 +49,10 @@ const PrivacyPolicy = () => {
                 <section>
                   <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    At ToolHub, we take your privacy seriously. This Privacy
+                    At ToolsCrush, we take your privacy seriously. This Privacy
                     Policy explains how we collect, use, store, and protect your
                     personal information when you use our website and services.
-                    By using ToolHub, you agree to the practices described in
+                    By using ToolsCrush, you agree to the practices described in
                     this policy.
                   </p>
                 </section>
@@ -208,7 +208,7 @@ const PrivacyPolicy = () => {
                     handle your data, please contact us at:
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-4">
-                    Email: privacy@toolhub.com
+                    Email: privacy@toolscrush.com
                     <br />
                     Address: 123 Tech Street, San Francisco, CA 94105
                   </p>

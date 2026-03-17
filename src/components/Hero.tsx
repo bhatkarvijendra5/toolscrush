@@ -3,10 +3,6 @@ const Hero = () => {
     <section className="relative overflow-hidden pt-6 pb-4 md:pt-12 md:pb-6 px-4" aria-labelledby="hero-heading">
       <div className="container relative z-10 mx-auto">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1.5 text-xs md:text-sm font-medium text-primary">
-            All tools are 100% free
-          </div>
-          
           <h1 id="hero-heading" className="mb-3 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
             Free Online PDF & Image Tools
           </h1>

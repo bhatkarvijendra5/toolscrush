@@ -13,8 +13,8 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <SEO 
         title="404 - Page Not Found"
-        description="The page you're looking for doesn't exist. Return to ToolHub to access our professional PDF and image tools."
-        canonicalUrl="https://toolhub.com/404"
+        description="The page you're looking for doesn't exist. Return to ToolsCrush to access our professional PDF and image tools."
+        canonicalUrl="https://toolscrush.com/404"
       />
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>

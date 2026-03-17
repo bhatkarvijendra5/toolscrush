@@ -13,13 +13,13 @@ interface SEOProps {
 const SEO = ({
   title,
   description,
-  keywords = "PDF tools, image tools, online PDF converter, merge PDF, split PDF, compress PDF, PDF to Word, Word to PDF, image converter, document tools, free PDF tools",
+  keywords = "PDF tools, image tools, online PDF converter, merge PDF, split PDF, compress PDF, PDF to Word, Word to PDF, image converter, document tools, free PDF tools, ToolsCrush",
   canonicalUrl,
   ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
   ogType = "website",
   noindex = false,
 }: SEOProps) => {
-  const fullTitle = title.includes("ToolHub") ? title : `${title} - Free Online Tool | ToolHub`;
+  const fullTitle = title.includes("ToolsCrush") ? title : `${title} - Free Online Tool | ToolsCrush`;
   const url = canonicalUrl || window.location.href;
 
   return (
@@ -41,7 +41,7 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="ToolHub" />
+      <meta property="og:site_name" content="ToolsCrush" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
@@ -50,12 +50,12 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@ToolHub" />
+      <meta name="twitter:site" content="@ToolsCrush" />
 
       {/* Additional SEO */}
       <meta name="language" content="English" />
       <meta name="revisit-after" content="3 days" />
-      <meta name="author" content="ToolHub" />
+      <meta name="author" content="ToolsCrush" />
       <meta httpEquiv="content-language" content="en" />
     </Helmet>
   );

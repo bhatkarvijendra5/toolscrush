@@ -19,24 +19,24 @@ const blogPostsData: Record<string, {
   "how-to-merge-pdf-files": {
     title: "How to Merge PDF Files: A Complete Guide",
     description: "Learn the best practices for combining multiple PDF documents into a single file. Discover tips for maintaining quality and organization.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-15",
     category: "PDF Tips",
     relatedTool: "Merge PDF",
     relatedToolPath: "/tools/merge-pdf",
     content: [
       "Merging PDF files is one of the most common document management tasks. Whether you're combining reports, contracts, or presentations, having a reliable method to merge PDFs is essential for any professional workflow.",
-      "There are several approaches to merging PDF files. Online tools like ToolHub offer a simple drag-and-drop interface that lets you combine multiple PDFs in seconds without installing any software. This is ideal for quick tasks and when you're working from different devices.",
-      "When merging PDFs, it's important to consider the order of your documents. Most tools, including ToolHub's Merge PDF tool, allow you to rearrange pages before finalizing the merge. This ensures your combined document flows logically.",
+      "There are several approaches to merging PDF files. Online tools like ToolsCrush offer a simple drag-and-drop interface that lets you combine multiple PDFs in seconds without installing any software. This is ideal for quick tasks and when you're working from different devices.",
+      "When merging PDFs, it's important to consider the order of your documents. Most tools, including ToolsCrush's Merge PDF tool, allow you to rearrange pages before finalizing the merge. This ensures your combined document flows logically.",
       "File size is another consideration. Merging many large PDFs can result in a very large output file. Consider compressing your PDFs before or after merging to keep file sizes manageable, especially if you plan to share the document via email.",
       "For best results, ensure all your source PDFs are in good condition — not corrupted or password-protected (unless you unlock them first). This prevents errors during the merge process and ensures a clean output document.",
-      "Security is also important when merging sensitive documents. ToolHub processes all files locally in your browser, meaning your documents never leave your device. This is a significant advantage over server-based solutions for confidential materials.",
+      "Security is also important when merging sensitive documents. ToolsCrush processes all files locally in your browser, meaning your documents never leave your device. This is a significant advantage over server-based solutions for confidential materials.",
     ],
   },
   "image-compression-techniques": {
     title: "Image Compression Techniques for Web Performance",
     description: "Optimize your website's loading speed with effective image compression. Find out which formats and quality settings work best.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-10",
     category: "Image Tools",
     relatedTool: "Compress Image",
@@ -47,13 +47,13 @@ const blogPostsData: Record<string, {
       "For photographs and complex images, JPEG with lossy compression at 75-85% quality typically provides the best balance between file size and visual quality. Most users can't distinguish between a full-quality image and one compressed to 80%.",
       "For graphics, logos, and images with transparency, PNG with lossless compression is often the best choice. While PNG files tend to be larger than JPEGs, they maintain sharp edges and support transparency.",
       "WebP is a modern format that offers both lossy and lossless compression with superior results compared to JPEG and PNG. WebP images are typically 25-35% smaller than their JPEG counterparts at equivalent quality.",
-      "Tools like ToolHub's image compressor make it easy to optimize your images without technical knowledge. Simply upload your images, choose your desired quality level, and download the compressed versions ready for your website.",
+      "Tools like ToolsCrush's image compressor make it easy to optimize your images without technical knowledge. Simply upload your images, choose your desired quality level, and download the compressed versions ready for your website.",
     ],
   },
   "pdf-to-word-conversion": {
     title: "PDF to Word Conversion: Maintaining Formatting",
     description: "Converting PDFs to Word documents while preserving layouts, fonts, and images. Tips for professional document conversion.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-05",
     category: "PDF Tips",
     relatedTool: "PDF to Word",
@@ -64,13 +64,13 @@ const blogPostsData: Record<string, {
       "Text-heavy PDFs generally convert the best. Simple documents with standard fonts and minimal graphics will produce Word files that closely match the original. Complex layouts with multiple columns, tables, and embedded images may require more manual adjustment.",
       "When converting PDFs with tables, look for tools that specifically handle table recognition. Good conversion tools will identify table structures and recreate them as proper Word tables rather than converting them to plain text.",
       "Font handling is another important consideration. If the PDF uses custom or embedded fonts that aren't available on your system, the conversion tool will substitute similar fonts. For best results, ensure common fonts are installed on your computer.",
-      "ToolHub's PDF to Word converter handles these challenges intelligently, preserving as much formatting as possible while giving you a fully editable Word document. For best results, review the converted document and make any necessary formatting adjustments.",
+      "ToolsCrush's PDF to Word converter handles these challenges intelligently, preserving as much formatting as possible while giving you a fully editable Word document. For best results, review the converted document and make any necessary formatting adjustments.",
     ],
   },
   "protecting-pdfs-security": {
     title: "Protecting Your PDFs: Security Best Practices",
     description: "Secure your sensitive documents with password protection. Learn about encryption standards and document security.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-28",
     category: "Security",
     relatedTool: "Protect PDF",
@@ -81,13 +81,13 @@ const blogPostsData: Record<string, {
       "Encryption standards matter when protecting PDFs. Modern tools use AES-256 encryption, which is the same standard used by governments and financial institutions. Always choose tools that support this level of encryption for sensitive documents.",
       "Beyond password protection, consider using digital signatures to verify document authenticity. A digital signature confirms that the document hasn't been tampered with since it was signed, providing an additional layer of security.",
       "Watermarking is another useful security measure. Adding visible or invisible watermarks to your PDFs can deter unauthorized sharing and help you track document distribution. This is particularly useful for draft documents and confidential materials.",
-      "Remember that no security measure is absolute. Strong passwords, up-to-date encryption, and careful sharing practices combined create the best defense for your sensitive PDF documents. ToolHub offers tools for password protection, digital signatures, and watermarking to help secure your documents.",
+      "Remember that no security measure is absolute. Strong passwords, up-to-date encryption, and careful sharing practices combined create the best defense for your sensitive PDF documents. ToolsCrush offers tools for password protection, digital signatures, and watermarking to help secure your documents.",
     ],
   },
   "batch-processing-pdfs": {
     title: "Batch Processing: Working with Multiple PDFs",
     description: "Save time by processing multiple PDF files at once. Discover efficient workflows for document management.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-20",
     category: "Productivity",
     content: [
@@ -96,13 +96,13 @@ const blogPostsData: Record<string, {
       "Organization is key to effective batch processing. Before starting, sort your files logically — by date, department, or project. This ensures your output files are organized and easy to find after processing.",
       "File naming conventions also matter. Establish a consistent naming pattern for your input and output files. This makes it easier to track which files have been processed and maintain a clean file system.",
       "When batch processing, always test with a small sample first. Process two or three files to verify the results meet your expectations before running the full batch. This prevents wasting time if settings need adjustment.",
-      "ToolHub supports batch operations across many of its tools. Upload multiple files at once, configure your settings, and process them all with a single click. This streamlined approach is perfect for professionals who regularly work with large document sets.",
+      "ToolsCrush supports batch operations across many of its tools. Upload multiple files at once, configure your settings, and process them all with a single click. This streamlined approach is perfect for professionals who regularly work with large document sets.",
     ],
   },
   "image-format-guide": {
     title: "Image Format Guide: JPG vs PNG vs WEBP",
     description: "Choose the right image format for your needs. Compare quality, file size, and browser support across different formats.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-15",
     category: "Image Tools",
     relatedTool: "Convert Image",
@@ -113,7 +113,7 @@ const blogPostsData: Record<string, {
       "PNG (Portable Network Graphics) uses lossless compression, preserving all image data. This makes it ideal for graphics, logos, screenshots, and any image requiring transparency. PNG files are typically larger than JPEGs but offer superior quality for non-photographic content.",
       "WebP is a modern format developed by Google that supports both lossy and lossless compression, as well as transparency and animation. WebP files are typically 25-35% smaller than equivalent JPEGs and PNGs, making it an excellent choice for web use.",
       "For web development, consider using WebP as your primary format with JPEG or PNG fallbacks for older browsers. Most modern browsers support WebP, and the file size savings can significantly improve page load times.",
-      "ToolHub's image converter makes it easy to switch between formats. Upload your image in any supported format and convert it to JPG, PNG, or WebP with customizable quality settings. This flexibility lets you optimize images for any use case.",
+      "ToolsCrush's image converter makes it easy to switch between formats. Upload your image in any supported format and convert it to JPG, PNG, or WebP with customizable quality settings. This flexibility lets you optimize images for any use case.",
     ],
   },
 };
@@ -131,14 +131,14 @@ const BlogPost = () => {
       <SEO
         title={post.title}
         description={post.description}
-        canonicalUrl={`https://toolhub.com/blog/${slug}`}
+        canonicalUrl={`https://toolscrush.com/blog/${slug}`}
       />
       <StructuredData
         type="breadcrumb"
         breadcrumbs={[
-          { name: "Home", url: "https://toolhub.com" },
-          { name: "Blog", url: "https://toolhub.com/blog" },
-          { name: post.title, url: `https://toolhub.com/blog/${slug}` },
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: post.title, url: `/blog/${slug}` },
         ]}
       />
       <Header />
