@@ -33,6 +33,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CompressImage from "./pages/tools/CompressImage";
+import ImageResizer from "./pages/tools/ImageResizer";
 
 const queryClient = new QueryClient();
 
