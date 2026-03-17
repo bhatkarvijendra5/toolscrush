@@ -437,8 +437,8 @@ const ImageResizer = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="rounded-lg bg-green-500/10 p-3 text-center">
-                        <p className="text-sm font-semibold text-green-700 dark:text-green-400">
+                      <div className="rounded-lg bg-primary/10 p-3 text-center">
+                        <p className="text-sm font-semibold text-primary">
                           {Math.round((1 - selectedImage.compressedSize! / selectedImage.originalSize) * 100)}% reduction
                         </p>
                         <p className="text-xs text-muted-foreground">
