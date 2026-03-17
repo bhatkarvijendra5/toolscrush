@@ -103,7 +103,7 @@ const JPGToPDF = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `converted-images-${Date.now()}.pdf`;
+      a.download = `ToolsCrush_converted-images-${Date.now()}.pdf`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

@@ -80,7 +80,7 @@ const ProtectPDF = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `protected-${file.name}`;
+      a.download = `ToolsCrush_protected-${file.name}`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

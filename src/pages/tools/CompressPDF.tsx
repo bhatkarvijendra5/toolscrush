@@ -64,7 +64,7 @@ const CompressPDF = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `compressed-${file.name}`;
+      a.download = `ToolsCrush_compressed-${file.name}`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

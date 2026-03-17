@@ -212,7 +212,7 @@ const DocumentAnalyzer = () => {
           break;
         default:
           blob = new Blob([extractedText], { type: 'text/plain' });
-          fileName = `${baseFileName}.txt`;
+          fileName = `ToolsCrush_${baseFileName}.txt`;
       }
 
       const url = URL.createObjectURL(blob);

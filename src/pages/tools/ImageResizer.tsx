@@ -170,7 +170,7 @@ const ImageResizer = () => {
   const downloadFile = (img: ImageFile) => {
     if (!img.compressedBlob) return;
     const ext = img.file.name.match(/\.[^/.]+$/)?.[0] || ".jpg";
-    const name = img.file.name.replace(/\.[^/.]+$/, "") + `_compressed${ext}`;
+    const name = `ToolsCrush_${img.file.name.replace(/\.[^/.]+$/, "")}_compressed${ext}`;
     const url = URL.createObjectURL(img.compressedBlob);
     const a = document.createElement("a");
     a.href = url;

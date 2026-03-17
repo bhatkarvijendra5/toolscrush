@@ -588,7 +588,7 @@ const SignPDF = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = data.fileName || `signed-${file.name}`;
+      a.download = `ToolsCrush_${data.fileName || `signed-${file.name}`}`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

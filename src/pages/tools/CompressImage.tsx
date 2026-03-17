@@ -37,7 +37,7 @@ const CompressImage = () => {
                 (blob) => {
                   resolve({
                     blob: blob!,
-                    name: file.name.replace(/\.[^/.]+$/, "_compressed.jpg"),
+                    name: `ToolsCrush_${file.name.replace(/\.[^/.]+$/, "_compressed.jpg")}`,
                   });
                 },
                 "image/jpeg",

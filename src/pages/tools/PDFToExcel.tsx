@@ -122,7 +122,7 @@ const PDFToExcel = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = file.name.replace(".pdf", ".csv");
+      a.download = `ToolsCrush_${file.name.replace(".pdf", ".csv")}`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
