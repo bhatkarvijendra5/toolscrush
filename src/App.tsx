@@ -63,6 +63,7 @@ const App = () => (
           <Route path="/tools/page-numbers" element={<AddPageNumbers />} />
           <Route path="/tools/resize-image" element={<ResizeImage />} />
           <Route path="/tools/compress-image" element={<CompressImage />} />
+          <Route path="/tools/image-resizer" element={<ImageResizer />} />
           <Route path="/tools/watermark-pdf" element={<WatermarkPDF />} />
           <Route path="/tools/protect-pdf" element={<ProtectPDF />} />
           <Route path="/tools/unlock-pdf" element={<UnlockPDF />} />
