@@ -19,7 +19,7 @@ const SEO = ({
   ogType = "website",
   noindex = false,
 }: SEOProps) => {
-  const fullTitle = title.includes("ToolHub") ? title : `${title} - Free Online Tool | ToolHub`;
+  const fullTitle = title.includes("ToolsCrush") ? title : `${title} - Free Online Tool | ToolsCrush`;
   const url = canonicalUrl || window.location.href;
 
   return (
