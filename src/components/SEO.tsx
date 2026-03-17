@@ -41,7 +41,7 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="ToolHub" />
+      <meta property="og:site_name" content="ToolsCrush" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
