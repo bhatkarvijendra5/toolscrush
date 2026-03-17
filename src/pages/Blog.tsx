@@ -28,7 +28,7 @@ const blogPosts = [
     id: 3,
     title: "PDF to Word Conversion: Maintaining Formatting",
     excerpt: "Converting PDFs to Word documents while preserving layouts, fonts, and images. Tips for professional document conversion.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-05",
     slug: "pdf-to-word-conversion",
     category: "PDF Tips",
