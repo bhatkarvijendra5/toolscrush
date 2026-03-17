@@ -64,9 +64,9 @@ const ContactUs = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="Contact Us"
-        description="Get in touch with ToolHub. Have questions or feedback about our PDF and image tools? We'd love to hear from you."
-        keywords="contact ToolHub, support, customer service, help, feedback"
-        canonicalUrl="https://toolhub.com/contact"
+        description="Get in touch with ToolsCrush. Have questions or feedback about our PDF and image tools? We'd love to hear from you."
+        keywords="contact ToolsCrush, support, customer service, help, feedback"
+        canonicalUrl="https://toolscrush.com/contact"
       />
       <StructuredData 
         type="breadcrumb"
