@@ -46,7 +46,7 @@ const blogPosts = [
     id: 5,
     title: "Batch Processing: Working with Multiple PDFs",
     excerpt: "Save time by processing multiple PDF files at once. Discover efficient workflows for document management.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-20",
     slug: "batch-processing-pdfs",
     category: "Productivity",
