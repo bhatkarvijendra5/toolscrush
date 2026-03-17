@@ -10,7 +10,7 @@ const blogPosts = [
     id: 1,
     title: "How to Merge PDF Files: A Complete Guide",
     excerpt: "Learn the best practices for combining multiple PDF documents into a single file. Discover tips for maintaining quality and organization.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-15",
     slug: "how-to-merge-pdf-files",
     category: "PDF Tips",
