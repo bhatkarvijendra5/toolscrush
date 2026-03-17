@@ -193,7 +193,7 @@ const DocumentAnalyzer = () => {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `${baseFileName}.pdf`;
+        a.download = `ToolsCrush_${baseFileName}.pdf`;
         a.click();
         URL.revokeObjectURL(url);
         toast.success("Downloaded as PDF");
