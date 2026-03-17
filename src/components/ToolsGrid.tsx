@@ -26,6 +26,7 @@ const tools = [
   { title: "Convert Images", description: "Convert between JPG, PNG, WEBP, and HEIC", icon: RefreshCw, href: "/tools/convert-image", category: "Image Tools" },
   { title: "Compress Images", description: "Reduce image file size efficiently", icon: Minimize2, href: "/tools/compress-image", category: "Image Tools" },
   { title: "Resize Images", description: "Change image dimensions and resolution", icon: Maximize2, href: "/tools/resize-image", category: "Image Tools" },
+  { title: "Image Resizer", description: "Reduce image size by scaling down dimensions", icon: Minimize2, href: "/tools/image-resizer", category: "Image Tools" },
   { title: "Sign PDF", description: "Add your signature to PDF documents", icon: PenTool, href: "/tools/sign-pdf", category: "PDF Tools" },
   { title: "Protect PDF", description: "Secure your PDF with password protection", icon: Lock, href: "/tools/protect-pdf", category: "PDF Tools" },
   { title: "Unlock PDF", description: "Remove password protection from PDF", icon: Unlock, href: "/tools/unlock-pdf", category: "PDF Tools" },
