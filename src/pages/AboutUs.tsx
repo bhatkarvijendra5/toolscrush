@@ -44,9 +44,9 @@ const AboutUs = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="About Us"
-        description="Learn about ToolHub's mission to make document and image management simple and accessible for everyone. Discover our professional PDF and image tools."
-        keywords="about ToolHub, document management, PDF tools, image tools, online tools"
-        canonicalUrl="https://toolhub.com/about"
+        description="Learn about ToolsCrush's mission to make document and image management simple and accessible for everyone. Discover our professional PDF and image tools."
+        keywords="about ToolsCrush, document management, PDF tools, image tools, online tools"
+        canonicalUrl="https://toolscrush.com/about"
       />
       <StructuredData 
         type="breadcrumb"
