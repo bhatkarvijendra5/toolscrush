@@ -55,7 +55,7 @@ const blogPosts = [
     id: 6,
     title: "Image Format Guide: JPG vs PNG vs WEBP",
     excerpt: "Choose the right image format for your needs. Compare quality, file size, and browser support across different formats.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-15",
     slug: "image-format-guide",
     category: "Image Tools",
