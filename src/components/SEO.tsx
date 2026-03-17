@@ -13,7 +13,7 @@ interface SEOProps {
 const SEO = ({
   title,
   description,
-  keywords = "PDF tools, image tools, online PDF converter, merge PDF, split PDF, compress PDF, PDF to Word, Word to PDF, image converter, document tools, free PDF tools",
+  keywords = "PDF tools, image tools, online PDF converter, merge PDF, split PDF, compress PDF, PDF to Word, Word to PDF, image converter, document tools, free PDF tools, ToolsCrush",
   canonicalUrl,
   ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
   ogType = "website",
