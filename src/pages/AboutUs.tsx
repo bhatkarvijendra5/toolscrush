@@ -103,7 +103,7 @@ const AboutUs = () => {
                   management. We believe that powerful tools shouldn't be locked
                   behind paywalls or complicated interfaces. Whether you're a
                   student working on an assignment, a professional preparing
-                  documents for a client, or anyone in between, ToolHub is here
+                  documents for a client, or anyone in between, ToolsCrush is here
                   to make your life easier.
                 </p>
               </Card>
