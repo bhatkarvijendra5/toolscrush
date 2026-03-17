@@ -75,7 +75,7 @@ const AboutUs = () => {
                 <h2 className="mb-4 text-2xl font-semibold">Our Story</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    ToolHub was born from a simple idea: everyone should have
+                    ToolsCrush was born from a simple idea: everyone should have
                     access to professional-grade document and image tools without
                     the hassle of expensive software or complicated installations.
                   </p>
