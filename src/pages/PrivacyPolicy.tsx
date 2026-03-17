@@ -17,9 +17,9 @@ const PrivacyPolicy = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="Privacy Policy"
-        description="Read ToolHub's privacy policy. Learn how we protect your data and ensure your privacy when using our PDF and image tools."
-        keywords="privacy policy, data protection, user privacy, ToolHub privacy"
-        canonicalUrl="https://toolhub.com/privacy"
+        description="Read ToolsCrush's privacy policy. Learn how we protect your data and ensure your privacy when using our PDF and image tools."
+        keywords="privacy policy, data protection, user privacy, ToolsCrush privacy"
+        canonicalUrl="https://toolscrush.com/privacy"
       />
       <StructuredData 
         type="breadcrumb"
