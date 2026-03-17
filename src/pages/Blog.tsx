@@ -37,7 +37,7 @@ const blogPosts = [
     id: 4,
     title: "Protecting Your PDFs: Security Best Practices",
     excerpt: "Secure your sensitive documents with password protection. Learn about encryption standards and document security.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2023-12-28",
     slug: "protecting-pdfs-security",
     category: "Security",
