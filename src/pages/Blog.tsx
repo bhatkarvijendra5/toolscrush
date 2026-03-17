@@ -19,7 +19,7 @@ const blogPosts = [
     id: 2,
     title: "Image Compression Techniques for Web Performance",
     excerpt: "Optimize your website's loading speed with effective image compression. Find out which formats and quality settings work best.",
-    author: "ToolHub Team",
+    author: "ToolsCrush Team",
     date: "2024-01-10",
     slug: "image-compression-techniques",
     category: "Image Tools",
