@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import SEO from "./SEO";
 import StructuredData from "./StructuredData";
+import AdBanner from "./AdBanner";
 
 interface HowToStep {
   name: string;
@@ -57,6 +58,7 @@ const ToolPage = ({ title, description, children, keywords, canonicalUrl, howToS
         />
       )}
       <Header />
+      <AdBanner variant="banner" />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8">
           <Link to="/">
@@ -72,8 +74,11 @@ const ToolPage = ({ title, description, children, keywords, canonicalUrl, howToS
           </div>
 
           <div className="mx-auto max-w-4xl">{children}</div>
+
+          <AdBanner variant="mid-content" className="mt-8" />
         </div>
       </main>
+      <AdBanner variant="bottom" />
       <Footer />
     </div>
   );

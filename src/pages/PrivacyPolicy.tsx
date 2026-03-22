@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import AdBanner from "@/components/AdBanner";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
@@ -26,6 +27,7 @@ const PrivacyPolicy = () => {
         breadcrumbs={breadcrumbs}
       />
       <Header />
+      <AdBanner variant="banner" />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8">
           <Link to="/">
@@ -218,6 +220,7 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </main>
+      <AdBanner variant="bottom" />
       <Footer />
     </div>
   );

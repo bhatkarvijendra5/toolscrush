@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import AdBanner from "@/components/AdBanner";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -53,6 +54,7 @@ const AboutUs = () => {
         breadcrumbs={breadcrumbs}
       />
       <Header />
+      <AdBanner variant="banner" />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8">
           <Link to="/">
@@ -203,6 +205,7 @@ const AboutUs = () => {
           </div>
         </div>
       </main>
+      <AdBanner variant="bottom" />
       <Footer />
     </div>
   );
