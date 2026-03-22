@@ -6,9 +6,36 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const MAX_REQUESTS = 3; // Stricter for contact form to prevent spam
+
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > MAX_REQUESTS;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  const clientIP = getClientIP(req);
+  if (isRateLimited(clientIP)) {
+    return new Response(
+      JSON.stringify({ error: "Too many submissions. Please wait a minute and try again." }),
+      { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
   }
 
   try {
@@ -22,7 +49,6 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Validate types and lengths
     if (typeof name !== "string" || name.trim().length === 0 || name.trim().length > 200) {
       return new Response(
         JSON.stringify({ error: "Name must be between 1 and 200 characters." }),
@@ -37,7 +63,6 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Basic email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
       return new Response(
@@ -60,7 +85,6 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Use service role to insert (bypasses RLS)
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!

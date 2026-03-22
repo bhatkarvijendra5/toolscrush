@@ -3,12 +3,41 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
+
+// In-memory rate limiting
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 5; // 5 requests per minute for AI calls
+
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    req.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > MAX_REQUESTS_PER_WINDOW;
+}
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  const clientIP = getClientIP(req);
+  if (isRateLimited(clientIP)) {
+    return new Response(JSON.stringify({ error: 'Too many requests. Please wait a moment and try again.' }), {
+      status: 429,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   }
 
   try {
@@ -16,6 +45,14 @@ serve(async (req) => {
     
     if (!image) {
       throw new Error('No image provided');
+    }
+
+    // Validate payload size (max ~10MB base64)
+    if (typeof image === 'string' && image.length > 14_000_000) {
+      return new Response(JSON.stringify({ error: 'Image too large. Maximum size is 10MB.' }), {
+        status: 413,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
