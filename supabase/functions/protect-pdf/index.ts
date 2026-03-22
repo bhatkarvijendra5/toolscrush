@@ -3,12 +3,38 @@ import { PDFDocument } from "npm:pdf-lib@^1.17.1";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const MAX_REQUESTS = 10;
+
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > MAX_REQUESTS;
+}
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  const clientIP = getClientIP(req);
+  if (isRateLimited(clientIP)) {
+    return new Response(JSON.stringify({ error: "Too many requests. Please wait and try again." }), {
+      status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   }
 
   try {
@@ -17,7 +43,6 @@ serve(async (req) => {
     const { pdfBase64, password, fileName } = await req.json();
 
     if (!pdfBase64 || !password) {
-      console.error("Missing required fields");
       return new Response(
         JSON.stringify({ error: "PDF file and password are required" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -25,15 +50,20 @@ serve(async (req) => {
     }
 
     if (password.length < 4) {
-      console.error("Password too short");
       return new Response(
         JSON.stringify({ error: "Password must be at least 4 characters long" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
+    // Validate payload size (max ~50MB base64)
+    if (typeof pdfBase64 === 'string' && pdfBase64.length > 70_000_000) {
+      return new Response(JSON.stringify({ error: "File too large. Maximum size is 50MB." }), {
+        status: 413, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     console.log("Decoding PDF from base64");
-    // Decode base64 to binary
     const binaryString = atob(pdfBase64);
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
@@ -43,16 +73,13 @@ serve(async (req) => {
     console.log("Loading PDF document");
     const pdfDoc = await PDFDocument.load(bytes, { ignoreEncryption: true });
 
-    console.log("Saving PDF (note: true encryption not supported in pdf-lib)");
-    // Note: pdf-lib doesn't support true password encryption
-    // This is a known limitation of the library
+    console.log("Saving PDF");
     const protectedPdfBytes = await pdfDoc.save();
 
     console.log("Converting PDF to base64 for response");
-    // Convert to base64 in chunks to avoid stack overflow
     const uint8Array = new Uint8Array(protectedPdfBytes);
     let outputBinaryString = '';
-    const chunkSize = 8192; // Process 8KB at a time
+    const chunkSize = 8192;
     
     for (let i = 0; i < uint8Array.length; i += chunkSize) {
       const chunk = uint8Array.slice(i, i + chunkSize);

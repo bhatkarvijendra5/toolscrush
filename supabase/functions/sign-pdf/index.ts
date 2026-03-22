@@ -3,8 +3,27 @@ import { PDFDocument, degrees, rgb } from "npm:pdf-lib@^1.17.1";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const MAX_REQUESTS = 10;
+
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > MAX_REQUESTS;
+}
 
 interface PlacedSignature {
   dataUrl: string;
@@ -21,13 +40,19 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const clientIP = getClientIP(req);
+  if (isRateLimited(clientIP)) {
+    return new Response(JSON.stringify({ error: "Too many requests. Please wait and try again.", success: false }), {
+      status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   try {
     console.log("Sign PDF function called");
     
     const { pdfBase64, signatures, fileName } = await req.json();
 
     if (!pdfBase64) {
-      console.error("Missing PDF file");
       return new Response(
         JSON.stringify({ error: "PDF file is required", success: false }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -35,16 +60,21 @@ serve(async (req) => {
     }
 
     if (!signatures || !Array.isArray(signatures) || signatures.length === 0) {
-      console.error("No signatures provided");
       return new Response(
         JSON.stringify({ error: "At least one signature is required", success: false }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
+    // Validate payload size
+    if (typeof pdfBase64 === 'string' && pdfBase64.length > 70_000_000) {
+      return new Response(JSON.stringify({ error: "File too large. Maximum size is 50MB.", success: false }), {
+        status: 413, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     console.log(`Processing ${signatures.length} signatures`);
 
-    // Decode base64 to binary
     const binaryString = atob(pdfBase64);
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
@@ -55,7 +85,6 @@ serve(async (req) => {
     const pdfDoc = await PDFDocument.load(bytes, { ignoreEncryption: true });
     const pages = pdfDoc.getPages();
 
-    // Embed each signature onto the PDF
     for (const sig of signatures as PlacedSignature[]) {
       const page = pages[sig.page];
       if (!page) {
@@ -64,7 +93,6 @@ serve(async (req) => {
       }
 
       try {
-        // Extract image data from data URL
         const base64Data = sig.dataUrl.split(',')[1];
         if (!base64Data) {
           console.error("Invalid signature data URL format");
@@ -77,7 +105,6 @@ serve(async (req) => {
           signatureBytes[i] = signatureBinaryString.charCodeAt(i);
         }
 
-        // Detect image format and embed accordingly
         const isPng = sig.dataUrl.startsWith('data:image/png');
         let signatureImage;
         
@@ -87,7 +114,6 @@ serve(async (req) => {
             : await pdfDoc.embedJpg(signatureBytes);
         } catch (embedError) {
           console.error("Failed to embed signature image:", embedError);
-          // Try the other format as fallback
           try {
             signatureImage = isPng 
               ? await pdfDoc.embedJpg(signatureBytes)
@@ -100,7 +126,6 @@ serve(async (req) => {
 
         const { height: pageHeight } = page.getSize();
 
-        // Draw the signature image on the page
         page.drawImage(signatureImage, {
           x: sig.x,
           y: pageHeight - sig.y - sig.height,
@@ -116,24 +141,17 @@ serve(async (req) => {
       }
     }
 
-    // Add signature metadata to mark document as signed
     pdfDoc.setTitle(pdfDoc.getTitle() || 'Signed Document');
     pdfDoc.setSubject('Digitally Signed Document');
     pdfDoc.setKeywords(['signed', 'digital signature']);
     pdfDoc.setModificationDate(new Date());
-    
-    // Add custom metadata for signature tracking
     pdfDoc.setCreator('PDF Sign Tool');
     pdfDoc.setProducer(`Signed with ${signatures.length} signature(s) on ${new Date().toISOString()}`);
 
     console.log("Saving signed PDF");
-    // Save the PDF with signatures flattened
-    const signedPdfBytes = await pdfDoc.save({
-      useObjectStreams: false,
-    });
+    const signedPdfBytes = await pdfDoc.save({ useObjectStreams: false });
 
     console.log("Converting PDF to base64 for response");
-    // Convert to base64 in chunks to avoid stack overflow
     const uint8Array = new Uint8Array(signedPdfBytes);
     let outputBinaryString = '';
     const chunkSize = 8192;
@@ -155,20 +173,14 @@ serve(async (req) => {
         signedAt: new Date().toISOString()
       }),
       {
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
   } catch (error) {
     console.error("Error signing PDF:", error);
     const errorMessage = error instanceof Error ? error.message : "Failed to sign PDF";
     return new Response(
-      JSON.stringify({ 
-        error: errorMessage, 
-        success: false 
-      }),
+      JSON.stringify({ error: errorMessage, success: false }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
