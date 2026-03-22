@@ -59,9 +59,10 @@ const ForgotPassword = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="Forgot Password"
-        description="Reset your ToolsCrush account password. Enter your email to receive a secure password reset link."
-        keywords="forgot password, reset password, password recovery, account recovery"
+        description="Reset your ToolsCrush account password."
+        keywords="forgot password, reset password, password recovery"
         canonicalUrl="https://toolscrush.com/forgot-password"
+        noindex={true}
       />
       <Header />
       <main className="flex-1">

@@ -10,12 +10,22 @@ interface HowToStep {
   text: string;
 }
 
+interface ArticleMeta {
+  title: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  dateModified?: string;
+  url: string;
+}
+
 interface StructuredDataProps {
-  type?: "organization" | "website" | "breadcrumb" | "tool" | "howto";
+  type?: "organization" | "website" | "breadcrumb" | "tool" | "howto" | "article";
   breadcrumbs?: BreadcrumbItem[];
   toolName?: string;
   toolDescription?: string;
   howToSteps?: HowToStep[];
+  articleMeta?: ArticleMeta;
 }
 
 const StructuredData = ({ 
@@ -23,7 +33,8 @@ const StructuredData = ({
   breadcrumbs,
   toolName,
   toolDescription,
-  howToSteps
+  howToSteps,
+  articleMeta
 }: StructuredDataProps) => {
   const baseUrl = "https://toolscrush.com";
 
@@ -88,6 +99,7 @@ const StructuredData = ({
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: toolDescription,
+    url: typeof window !== "undefined" ? window.location.href : baseUrl,
     offers: {
       "@type": "Offer",
       price: "0",
@@ -116,6 +128,33 @@ const StructuredData = ({
     totalTime: "PT2M"
   } : null;
 
+  const articleSchema = articleMeta ? {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: articleMeta.title,
+    description: articleMeta.description,
+    author: {
+      "@type": "Organization",
+      name: articleMeta.author,
+      url: baseUrl
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ToolsCrush",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/favicon.ico`
+      }
+    },
+    datePublished: articleMeta.datePublished,
+    dateModified: articleMeta.dateModified || articleMeta.datePublished,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleMeta.url
+    },
+    image: `${baseUrl}/og-image.png`
+  } : null;
+
   const getSchema = () => {
     switch (type) {
       case "organization":
@@ -128,6 +167,8 @@ const StructuredData = ({
         return toolSchema;
       case "howto":
         return howToSchema;
+      case "article":
+        return articleSchema;
       default:
         return organizationSchema;
     }

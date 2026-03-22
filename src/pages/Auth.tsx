@@ -169,9 +169,10 @@ const Auth = () => {
     <div className="flex min-h-screen flex-col">
       <SEO 
         title="Sign In / Sign Up"
-        description="Sign in to your ToolsCrush account or create a new account. Access all premium PDF and image tools with your account."
-        keywords="sign in, sign up, login, register, create account, ToolsCrush account"
+        description="Sign in to your ToolsCrush account or create a new account."
+        keywords="sign in, sign up, login, register, ToolsCrush account"
         canonicalUrl="https://toolscrush.com/auth"
+        noindex={true}
       />
       <Header />
       <main className="flex-1">
