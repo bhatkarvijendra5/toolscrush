@@ -1,9 +1,13 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /auth
+Disallow: /forgot-password
 Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Disallow: /auth
+Disallow: /forgot-password
 Crawl-delay: 1
 
 User-agent: Twitterbot
@@ -14,6 +18,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /forgot-password
 Crawl-delay: 2
 
 Sitemap: https://toolscrush.com/sitemap.xml

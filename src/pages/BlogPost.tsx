@@ -133,6 +133,12 @@ const BlogPost = () => {
         title={post.title}
         description={post.description}
         canonicalUrl={`https://toolscrush.com/blog/${slug}`}
+        ogType="article"
+        articleMeta={{
+          publishedTime: post.date,
+          author: post.author,
+          section: post.category,
+        }}
       />
       <StructuredData
         type="breadcrumb"
@@ -141,6 +147,16 @@ const BlogPost = () => {
           { name: "Blog", url: "/blog" },
           { name: post.title, url: `/blog/${slug}` },
         ]}
+      />
+      <StructuredData
+        type="article"
+        articleMeta={{
+          title: post.title,
+          description: post.description,
+          author: post.author,
+          datePublished: post.date,
+          url: `https://toolscrush.com/blog/${slug}`,
+        }}
       />
       <Header />
       <AdBanner variant="banner" />
