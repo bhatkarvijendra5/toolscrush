@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react";
+import { Send, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -90,134 +90,76 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="md:col-span-2">
-                <Card className="p-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid gap-6 md:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your name"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your@email.com"
-                          required
-                        />
-                      </div>
-                    </div>
-
+            <div className="mx-auto max-w-2xl">
+              <Card className="p-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Subject *</Label>
+                      <Label htmlFor="name">Name *</Label>
                       <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
-                        placeholder="What is this about?"
+                        placeholder="Your name"
                         required
                       />
                     </div>
-
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
                         onChange={handleChange}
-                        placeholder="Tell us more..."
-                        className="min-h-[150px]"
+                        placeholder="your@email.com"
                         required
                       />
                     </div>
-
-                    <Button
-                      type="submit"
-                      className="w-full"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        "Sending..."
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-4 w-4" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </Card>
-              </div>
-
-              <div className="space-y-6">
-                <Card className="p-6">
-                  <h3 className="mb-4 font-semibold">Contact Information</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Mail className="mt-1 h-5 w-5 text-primary" />
-                      <div>
-                        <p className="text-sm font-medium">Email</p>
-                        <a
-                          href="mailto:support@toolscrush.com"
-                          className="text-sm text-muted-foreground hover:text-primary"
-                        >
-                          support@toolscrush.com
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <Phone className="mt-1 h-5 w-5 text-primary" />
-                      <div>
-                        <p className="text-sm font-medium">Phone</p>
-                        <a
-                          href="tel:+1234567890"
-                          className="text-sm text-muted-foreground hover:text-primary"
-                        >
-                          +1 (234) 567-890
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="mt-1 h-5 w-5 text-primary" />
-                      <div>
-                        <p className="text-sm font-medium">Address</p>
-                        <p className="text-sm text-muted-foreground">
-                          123 Tech Street
-                          <br />
-                          San Francisco, CA 94105
-                          <br />
-                          United States
-                        </p>
-                      </div>
-                    </div>
                   </div>
-                </Card>
 
-                <Card className="p-6">
-                  <h3 className="mb-2 font-semibold">Business Hours</h3>
-                  <div className="space-y-1 text-sm text-muted-foreground">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM</p>
-                    <p>Sunday: Closed</p>
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Subject *</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="What is this about?"
+                      required
+                    />
                   </div>
-                </Card>
-              </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message *</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us more..."
+                      className="min-h-[150px]"
+                      required
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-4 w-4" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </Card>
             </div>
           </div>
         </div>
