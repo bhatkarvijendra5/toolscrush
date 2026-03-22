@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import AdBanner from "@/components/AdBanner";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -72,6 +73,7 @@ const Blog = () => {
         canonicalUrl="https://toolscrush.com/blog"
       />
       <Header />
+      <AdBanner variant="banner" />
       <main className="flex-1">
         <section className="py-10 md:py-20 px-4">
           <div className="container mx-auto max-w-6xl">
@@ -116,6 +118,7 @@ const Blog = () => {
           </div>
         </section>
       </main>
+      <AdBanner variant="bottom" />
       <Footer />
     </div>
   );

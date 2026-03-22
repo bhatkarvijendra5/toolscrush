@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AdBanner from "@/components/AdBanner";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
 import { Link, useParams } from "react-router-dom";
@@ -142,6 +143,7 @@ const BlogPost = () => {
         ]}
       />
       <Header />
+      <AdBanner variant="banner" />
       <main className="flex-1">
         <article className="py-10 md:py-20 px-4">
           <div className="container mx-auto max-w-3xl">
@@ -195,6 +197,7 @@ const BlogPost = () => {
           </div>
         </article>
       </main>
+      <AdBanner variant="bottom" />
       <Footer />
     </div>
   );

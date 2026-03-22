@@ -12,6 +12,7 @@ import { Send, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import AdBanner from "@/components/AdBanner";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -73,6 +74,7 @@ const ContactUs = () => {
         breadcrumbs={breadcrumbs}
       />
       <Header />
+      <AdBanner variant="banner" />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8">
           <Link to="/">
@@ -164,6 +166,7 @@ const ContactUs = () => {
           </div>
         </div>
       </main>
+      <AdBanner variant="bottom" />
       <Footer />
     </div>
   );
