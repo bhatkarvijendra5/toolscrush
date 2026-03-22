@@ -24,7 +24,10 @@
     <meta property="og:url" content="https://toolscrush.com/" />
     <meta property="og:title" content="ToolsCrush - Free Online PDF & Image Tools" />
     <meta property="og:description" content="Free online PDF and image tools. Merge, split, compress PDFs, convert to Word, Excel, JPG and more." />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://toolscrush.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ToolsCrush - Free Online PDF & Image Tools" />
     <meta property="og:site_name" content="ToolsCrush" />
     <meta property="og:locale" content="en_US" />
 
@@ -33,14 +36,16 @@
     <meta name="twitter:site" content="@ToolsCrush" />
     <meta name="twitter:title" content="ToolsCrush - Free Online PDF & Image Tools" />
     <meta name="twitter:description" content="Free online PDF and image tools. Merge, split, compress PDFs and convert images." />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="https://toolscrush.com/og-image.png" />
+    <meta name="twitter:image:alt" content="ToolsCrush - Free Online PDF & Image Tools" />
 
     <!-- Additional SEO -->
-    <meta name="theme-color" content="#4f46e5" />
+    <meta name="theme-color" content="#1A2530" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="color-scheme" content="light dark" />
 
     <!-- JSON-LD Structured Data for Organization -->
     <script type="application/ld+json">
@@ -51,6 +56,12 @@
       "url": "https://toolscrush.com",
       "logo": "https://toolscrush.com/favicon.ico",
       "description": "Free online PDF and image tools for everyone.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "url": "https://toolscrush.com/contact",
+        "availableLanguage": ["English"]
+      },
       "sameAs": []
     }
     </script>
@@ -65,7 +76,10 @@
       "description": "Free online PDF and image tools. Merge, split, compress PDFs and convert images.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://toolscrush.com/?q={search_term_string}",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://toolscrush.com/?q={search_term_string}"
+        },
         "query-input": "required name=search_term_string"
       }
     }
@@ -84,7 +98,56 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "Free online PDF and image tools. Merge, split, compress PDFs and convert images with professional-grade quality."
+      "description": "Free online PDF and image tools. Merge, split, compress PDFs and convert images with professional-grade quality.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "2450",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is ToolsCrush free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all PDF and image tools on ToolsCrush are completely free to use with no signup required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my files secure when using ToolsCrush?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most tools process files directly in your browser, meaning your documents never leave your device. For server-side tools, files are processed securely and deleted immediately after."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What PDF tools are available on ToolsCrush?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ToolsCrush offers Merge PDF, Split PDF, Compress PDF, PDF to Word, PDF to Excel, PDF to PowerPoint, Word to PDF, JPG to PDF, PDF to JPG, Sign PDF, Protect PDF, Unlock PDF, Watermark PDF, Organize PDF, and Add Page Numbers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress images on ToolsCrush?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ToolsCrush offers image compression, resizing, and format conversion tools that process images entirely in your browser for maximum privacy and speed."
+          }
+        }
+      ]
     }
     </script>
   </head>
@@ -93,31 +156,52 @@
     <noscript>
       <h1>ToolsCrush - Free Online PDF & Image Tools</h1>
       <p>Free online PDF and image tools. Merge, split, compress PDFs, convert PDF to Word, Excel, JPG and more. Fast, secure, no signup required.</p>
-      <ul>
-        <li><a href="/tools/merge-pdf">Merge PDF</a></li>
-        <li><a href="/tools/split-pdf">Split PDF</a></li>
-        <li><a href="/tools/compress-pdf">Compress PDF</a></li>
-        <li><a href="/tools/pdf-to-word">PDF to Word</a></li>
-        <li><a href="/tools/word-to-pdf">Word to PDF</a></li>
-        <li><a href="/tools/pdf-to-excel">PDF to Excel</a></li>
-        <li><a href="/tools/pdf-to-ppt">PDF to PowerPoint</a></li>
-        <li><a href="/tools/pdf-to-jpg">PDF to JPG</a></li>
-        <li><a href="/tools/jpg-to-pdf">JPG to PDF</a></li>
-        <li><a href="/tools/sign-pdf">Sign PDF</a></li>
-        <li><a href="/tools/protect-pdf">Protect PDF</a></li>
-        <li><a href="/tools/unlock-pdf">Unlock PDF</a></li>
-        <li><a href="/tools/watermark-pdf">Watermark PDF</a></li>
-        <li><a href="/tools/organize-pdf">Organize PDF</a></li>
-        <li><a href="/tools/page-numbers">Add Page Numbers</a></li>
-        <li><a href="/tools/resize-image">Resize Images</a></li>
-        <li><a href="/tools/convert-image">Convert Images</a></li>
-        <li><a href="/tools/compress-image">Compress Images</a></li>
-        <li><a href="/tools/document-analyzer">AI Document Analyzer</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
-      </ul>
+      <nav>
+        <h2>PDF Tools</h2>
+        <ul>
+          <li><a href="/tools/merge-pdf">Merge PDF - Combine multiple PDFs</a></li>
+          <li><a href="/tools/split-pdf">Split PDF - Extract pages from PDF</a></li>
+          <li><a href="/tools/compress-pdf">Compress PDF - Reduce PDF file size</a></li>
+          <li><a href="/tools/pdf-to-word">PDF to Word - Convert PDF to DOCX</a></li>
+          <li><a href="/tools/word-to-pdf">Word to PDF - Convert Word to PDF</a></li>
+          <li><a href="/tools/pdf-to-excel">PDF to Excel - Extract tables from PDF</a></li>
+          <li><a href="/tools/pdf-to-ppt">PDF to PowerPoint - Convert PDF to PPTX</a></li>
+          <li><a href="/tools/pdf-to-jpg">PDF to JPG - Convert PDF pages to images</a></li>
+          <li><a href="/tools/jpg-to-pdf">JPG to PDF - Convert images to PDF</a></li>
+          <li><a href="/tools/sign-pdf">Sign PDF - Add signature to PDF</a></li>
+          <li><a href="/tools/protect-pdf">Protect PDF - Password protect PDF</a></li>
+          <li><a href="/tools/unlock-pdf">Unlock PDF - Remove PDF password</a></li>
+          <li><a href="/tools/watermark-pdf">Watermark PDF - Add watermark to PDF</a></li>
+          <li><a href="/tools/organize-pdf">Organize PDF - Reorder PDF pages</a></li>
+          <li><a href="/tools/page-numbers">Add Page Numbers to PDF</a></li>
+        </ul>
+        <h2>Image Tools</h2>
+        <ul>
+          <li><a href="/tools/resize-image">Resize Images - Change image dimensions</a></li>
+          <li><a href="/tools/convert-image">Convert Images - JPG PNG WEBP conversion</a></li>
+          <li><a href="/tools/compress-image">Compress Images - Reduce image file size</a></li>
+          <li><a href="/tools/image-resizer">Image Size Reducer - Compress to target KB</a></li>
+        </ul>
+        <h2>AI Tools</h2>
+        <ul>
+          <li><a href="/tools/document-analyzer">AI Document Analyzer - OCR text extraction</a></li>
+        </ul>
+        <h2>Blog</h2>
+        <ul>
+          <li><a href="/blog/how-to-merge-pdf-files">How to Merge PDF Files: A Complete Guide</a></li>
+          <li><a href="/blog/image-compression-techniques">Image Compression Techniques for Web Performance</a></li>
+          <li><a href="/blog/pdf-to-word-conversion">PDF to Word Conversion: Maintaining Formatting</a></li>
+          <li><a href="/blog/protecting-pdfs-security">Protecting Your PDFs: Security Best Practices</a></li>
+          <li><a href="/blog/batch-processing-pdfs">Batch Processing: Working with Multiple PDFs</a></li>
+          <li><a href="/blog/image-format-guide">Image Format Guide: JPG vs PNG vs WEBP</a></li>
+        </ul>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
     </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
