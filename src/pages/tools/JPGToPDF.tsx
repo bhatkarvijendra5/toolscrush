@@ -126,10 +126,17 @@ const JPGToPDF = () => {
     }
   };
 
+  const seo = toolSeoData["jpg-to-pdf"];
+
   return (
     <ToolPage
-      title="JPG to PDF"
-      description="Convert JPG images to a single PDF document"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

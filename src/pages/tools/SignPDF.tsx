@@ -635,7 +635,10 @@ const SignPDF = () => {
   ];
 
   return (
-    <ToolPage title="Sign PDF" description="Add your signature to PDF documents" keywords="sign pdf, digital signature, esign pdf, sign documents online" canonicalUrl="https://toolhub.com/tools/sign-pdf" howToSteps={howToSteps}>
+  const seo = toolSeoData["sign-pdf"];
+
+  return (
+    <ToolPage title={seo.title} description={seo.description} keywords={seo.keywords} canonicalUrl={seo.canonicalUrl} howToSteps={howToSteps} faqs={seo.faqs} relatedTools={seo.relatedTools} contentIntro={seo.contentIntro}>
       <div className="space-y-6">
         <FileUploader
           accept={{ 

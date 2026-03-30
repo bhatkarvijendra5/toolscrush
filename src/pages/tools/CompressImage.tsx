@@ -72,11 +72,17 @@ const CompressImage = () => {
     }
   };
 
+  const seo = toolSeoData["compress-image"];
+
   return (
     <ToolPage
-      title="Compress Images"
-      description="Reduce image file size while maintaining quality. Perfect for web optimization and faster loading times."
-      keywords="compress image, reduce image size, optimize images, image compression, web optimization"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <FileUploader
         onFilesSelected={setFiles}
