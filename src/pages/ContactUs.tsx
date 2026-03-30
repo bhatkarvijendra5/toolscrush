@@ -111,8 +111,8 @@ const ContactUs = () => {
         <Header />
         <main className="flex-1 flex items-center justify-center px-4 py-16">
           <Card className="max-w-md w-full p-8 text-center space-y-6">
-            <div className="mx-auto w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-              <CheckCircle2 className="h-8 w-8 text-green-600" />
+            <div className="mx-auto w-16 h-16 rounded-full bg-accent flex items-center justify-center">
+              <CheckCircle2 className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-2xl font-bold">Message Sent Successfully!</h2>
             <p className="text-muted-foreground">
