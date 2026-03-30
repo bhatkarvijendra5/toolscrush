@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import { PDFDocument, rgb, degrees } from "pdf-lib";
 import * as pdfjsLib from "pdfjs-dist";
 import ToolPage from "@/components/ToolPage";
