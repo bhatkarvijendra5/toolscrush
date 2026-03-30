@@ -9,7 +9,7 @@ const corsHeaders = {
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_WINDOW_MS = 60_000;
-const MAX_REQUESTS = 3;
+const MAX_REQUESTS = 2;
 
 function getClientIP(req: Request): string {
   return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
