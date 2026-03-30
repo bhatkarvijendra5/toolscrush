@@ -121,13 +121,18 @@ const ProtectPDF = () => {
     }
   ];
 
+  const seo = (await import("@/data/toolSeoData")).toolSeoData["protect-pdf"];
+
   return (
     <ToolPage
-      title="Protect PDF"
-      description="Secure your PDF with password protection"
-      keywords="protect pdf, password protect pdf, secure pdf, encrypt pdf"
-      canonicalUrl="https://toolhub.com/tools/protect-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <Alert>

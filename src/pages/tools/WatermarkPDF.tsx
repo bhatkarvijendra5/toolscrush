@@ -252,13 +252,18 @@ const WatermarkPDF = () => {
     }
   ];
 
+  const seo = (await import("@/data/toolSeoData")).toolSeoData["watermark-pdf"];
+
   return (
     <ToolPage
-      title="Watermark PDF"
-      description="Add text or image watermarks to your PDF documents"
-      keywords="watermark pdf, add watermark to pdf, pdf watermark, protect pdf with watermark"
-      canonicalUrl="https://toolhub.com/tools/watermark-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

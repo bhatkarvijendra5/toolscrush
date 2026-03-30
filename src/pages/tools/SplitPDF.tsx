@@ -268,13 +268,18 @@ const SplitPDF = () => {
     }
   ];
 
+  const seo = (await import("@/data/toolSeoData")).toolSeoData["split-pdf"];
+
   return (
     <ToolPage
-      title="Split PDF"
-      description="Extract and split PDF pages into separate PDF documents"
-      keywords="split PDF, extract PDF pages, separate PDF pages, divide PDF, split PDF documents"
-      canonicalUrl="https://toolhub.com/tools/split-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

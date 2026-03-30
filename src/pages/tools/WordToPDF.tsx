@@ -128,13 +128,18 @@ const WordToPDF = () => {
     }
   ];
 
+  const seo = (await import("@/data/toolSeoData")).toolSeoData["word-to-pdf"];
+
   return (
     <ToolPage
-      title="Word to PDF"
-      description="Convert text documents to PDF format"
-      keywords="Word to PDF, DOCX to PDF, DOC to PDF, convert Word, document converter"
-      canonicalUrl="https://toolhub.com/tools/word-to-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

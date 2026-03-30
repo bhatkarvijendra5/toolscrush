@@ -252,13 +252,18 @@ const OrganizePDF = () => {
     }
   ];
 
+  const seo = (await import("@/data/toolSeoData")).toolSeoData["organize-pdf"];
+
   return (
     <ToolPage
-      title="Organize PDF"
-      description="Reorder, rotate, delete, or extract PDF pages"
-      keywords="organize pdf, reorder pdf pages, rotate pdf pages, extract pdf pages"
-      canonicalUrl="https://toolhub.com/tools/organize-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

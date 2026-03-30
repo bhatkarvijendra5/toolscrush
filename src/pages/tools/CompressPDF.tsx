@@ -111,13 +111,18 @@ const CompressPDF = () => {
     }
   ];
 
+  const seo = (await import("@/data/toolSeoData")).toolSeoData["compress-pdf"];
+
   return (
     <ToolPage
-      title="Compress PDF"
-      description="Reduce PDF file size while maintaining quality"
-      keywords="compress PDF, reduce PDF size, PDF compressor, optimize PDF, shrink PDF"
-      canonicalUrl="https://toolhub.com/tools/compress-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader
