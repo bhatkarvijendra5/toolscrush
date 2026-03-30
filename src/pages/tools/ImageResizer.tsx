@@ -193,11 +193,17 @@ const ImageResizer = () => {
 
   const hasCompressed = images.some((i) => i.compressedBlob);
 
+  const seo = toolSeoData["image-resizer"];
+
   return (
     <ToolPage
-      title="Image Size Reducer"
-      description="Compress images from MB to KB — fast, simple, and entirely in your browser. No uploads to any server."
-      keywords="reduce image size, compress image to KB, image compressor, reduce file size, image size reducer online"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="max-w-3xl mx-auto space-y-6">
         {/* Upload */}
