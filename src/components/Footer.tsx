@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="mb-4 flex items-center" aria-label="ToolsCrush Home">
-              <img src={logoHorizontal} alt="ToolsCrush" className="h-10" width="200" height="40" />
+              <img src={logoHorizontal} alt="ToolsCrush" className="h-8 sm:h-10 w-auto object-contain" />
             </Link>
             <p className="text-sm text-muted-foreground">
               Professional PDF and image tools for everyone. Free, fast, and secure.

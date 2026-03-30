@@ -47,7 +47,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60" role="banner">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center space-x-2" aria-label="ToolsCrush - Home">
-          <img src={logoHorizontal} alt="ToolsCrush" className="h-10" width="200" height="40" />
+          <img src={logoHorizontal} alt="ToolsCrush" className="h-8 sm:h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation */}
