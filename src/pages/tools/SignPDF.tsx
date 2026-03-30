@@ -634,7 +634,6 @@ const SignPDF = () => {
     }
   ];
 
-  return (
   const seo = toolSeoData["sign-pdf"];
 
   return (
