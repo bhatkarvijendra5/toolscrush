@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -139,13 +140,18 @@ const UnlockPDF = () => {
     },
   ];
 
+  const seo = toolSeoData["unlock-pdf"];
+
   return (
     <ToolPage
-      title="Unlock PDF"
-      description="Remove password protection from your PDF files. Upload a locked PDF, enter the password, and download the unlocked version."
-      keywords="unlock PDF, remove PDF password, PDF password remover, decrypt PDF, unlock encrypted PDF"
-      canonicalUrl="https://toolhub.com/tools/unlock-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

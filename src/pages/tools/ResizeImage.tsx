@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -146,10 +147,17 @@ const ResizeImage = () => {
     }
   };
 
+  const seo = toolSeoData["resize-image"];
+
   return (
     <ToolPage
-      title="Resize Images"
-      description="Change image dimensions while maintaining quality"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

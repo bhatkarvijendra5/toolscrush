@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -147,10 +148,17 @@ const PDFToExcel = () => {
     }
   };
 
+  const seo = toolSeoData["pdf-to-excel"];
+
   return (
     <ToolPage
-      title="PDF to Excel"
-      description="Extract tables and data from PDF to CSV format"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -39,10 +40,17 @@ const ConvertImage = () => {
     }, 3000);
   };
 
+  const seo = toolSeoData["convert-image"];
+
   return (
     <ToolPage
-      title="Convert Images"
-      description="Convert images between JPG, PNG, WEBP, and HEIC formats"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

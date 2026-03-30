@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -234,10 +235,17 @@ const DocumentAnalyzer = () => {
     }
   };
 
+  const seo = toolSeoData["document-analyzer"];
+
   return (
     <ToolPage
-      title="AI Document Analyzer"
-      description="Scan and clean handwritten notes, extract text with OCR, and download as DOCX/PDF with preserved layout"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <Card className="p-6">
         <div className="space-y-6">

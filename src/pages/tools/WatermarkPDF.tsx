@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import { PDFDocument, rgb, degrees } from "pdf-lib";
 import * as pdfjsLib from "pdfjs-dist";
 import ToolPage from "@/components/ToolPage";
@@ -252,13 +253,18 @@ const WatermarkPDF = () => {
     }
   ];
 
+  const seo = toolSeoData["watermark-pdf"];
+
   return (
     <ToolPage
-      title="Watermark PDF"
-      description="Add text or image watermarks to your PDF documents"
-      keywords="watermark pdf, add watermark to pdf, pdf watermark, protect pdf with watermark"
-      canonicalUrl="https://toolhub.com/tools/watermark-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

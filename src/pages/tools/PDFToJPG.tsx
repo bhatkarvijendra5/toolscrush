@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -133,10 +134,17 @@ const PDFToJPG = () => {
     }
   };
 
+  const seo = toolSeoData["pdf-to-jpg"];
+
   return (
     <ToolPage
-      title="PDF to JPG"
-      description="Convert PDF pages to high-quality JPG images"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

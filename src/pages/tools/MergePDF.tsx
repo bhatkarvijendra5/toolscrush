@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -201,13 +202,18 @@ const MergePDF = () => {
     }
   ];
 
+  const seo = toolSeoData["merge-pdf"];
+
   return (
     <ToolPage
-      title="Merge PDF"
-      description="Combine and reorder pages from multiple PDFs with drag-and-drop"
-      keywords="merge PDF, combine PDF, PDF merger, join PDFs, merge PDF files online"
-      canonicalUrl="https://toolhub.com/tools/merge-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <Card className="p-6">

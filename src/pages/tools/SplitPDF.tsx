@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -268,13 +269,18 @@ const SplitPDF = () => {
     }
   ];
 
+  const seo = toolSeoData["split-pdf"];
+
   return (
     <ToolPage
-      title="Split PDF"
-      description="Extract and split PDF pages into separate PDF documents"
-      keywords="split PDF, extract PDF pages, separate PDF pages, divide PDF, split PDF documents"
-      canonicalUrl="https://toolhub.com/tools/split-pdf"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

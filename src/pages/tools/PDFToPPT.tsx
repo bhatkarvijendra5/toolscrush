@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -154,10 +155,17 @@ const PDFToPPT = () => {
     }
   };
 
+  const seo = toolSeoData["pdf-to-ppt"];
+
   return (
     <ToolPage
-      title="PDF to PowerPoint"
-      description="Convert PDF pages to presentation slides"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader

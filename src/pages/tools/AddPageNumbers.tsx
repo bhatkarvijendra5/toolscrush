@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import FileUploader from "@/components/FileUploader";
 import { Button } from "@/components/ui/button";
@@ -232,13 +233,18 @@ const AddPageNumbers = () => {
     }
   ];
 
+  const seo = toolSeoData["page-numbers"];
+
   return (
     <ToolPage
-      title="Add Page Numbers"
-      description="Upload a PDF and add page numbers with customizable position and style"
-      keywords="add page numbers to pdf, pdf page numbering, number pdf pages"
-      canonicalUrl="https://toolhub.com/tools/add-page-numbers"
+      title={seo.title}
+      description={seo.description}
+      keywords={seo.keywords}
+      canonicalUrl={seo.canonicalUrl}
       howToSteps={howToSteps}
+      faqs={seo.faqs}
+      relatedTools={seo.relatedTools}
+      contentIntro={seo.contentIntro}
     >
       <div className="space-y-6">
         <FileUploader
