@@ -202,7 +202,7 @@ const MergePDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["merge-pdf"];
+  const seo = toolSeoData["merge-pdf"];
 
   return (
     <ToolPage

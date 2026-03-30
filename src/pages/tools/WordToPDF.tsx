@@ -129,7 +129,7 @@ const WordToPDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["word-to-pdf"];
+  const seo = toolSeoData["word-to-pdf"];
 
   return (
     <ToolPage

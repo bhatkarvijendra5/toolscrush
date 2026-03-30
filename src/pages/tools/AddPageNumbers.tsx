@@ -233,7 +233,7 @@ const AddPageNumbers = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["page-numbers"];
+  const seo = toolSeoData["page-numbers"];
 
   return (
     <ToolPage

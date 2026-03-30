@@ -112,7 +112,7 @@ const CompressPDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["compress-pdf"];
+  const seo = toolSeoData["compress-pdf"];
 
   return (
     <ToolPage

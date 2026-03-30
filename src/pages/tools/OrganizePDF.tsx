@@ -253,7 +253,7 @@ const OrganizePDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["organize-pdf"];
+  const seo = toolSeoData["organize-pdf"];
 
   return (
     <ToolPage

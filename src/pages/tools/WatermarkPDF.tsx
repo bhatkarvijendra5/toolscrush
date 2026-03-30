@@ -253,7 +253,7 @@ const WatermarkPDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["watermark-pdf"];
+  const seo = toolSeoData["watermark-pdf"];
 
   return (
     <ToolPage

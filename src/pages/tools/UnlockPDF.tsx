@@ -140,7 +140,7 @@ const UnlockPDF = () => {
     },
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["unlock-pdf"];
+  const seo = toolSeoData["unlock-pdf"];
 
   return (
     <ToolPage

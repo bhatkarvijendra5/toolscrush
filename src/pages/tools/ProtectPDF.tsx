@@ -122,7 +122,7 @@ const ProtectPDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["protect-pdf"];
+  const seo = toolSeoData["protect-pdf"];
 
   return (
     <ToolPage

@@ -269,7 +269,7 @@ const SplitPDF = () => {
     }
   ];
 
-  const seo = (await import("@/data/toolSeoData")).toolSeoData["split-pdf"];
+  const seo = toolSeoData["split-pdf"];
 
   return (
     <ToolPage
