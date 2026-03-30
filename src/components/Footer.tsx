@@ -1,5 +1,6 @@
-import { FileText, Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoHorizontal from "/logo-horizontal.png";
 
 const Footer = () => {
   return (
@@ -7,11 +8,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="mb-4 flex items-center space-x-2" aria-label="ToolsCrush Home">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-primary shadow-lg">
-                <FileText className="h-6 w-6 text-white" aria-hidden="true" />
-              </div>
-              <span className="text-xl font-bold">ToolsCrush</span>
+            <Link to="/" className="mb-4 flex items-center" aria-label="ToolsCrush Home">
+              <img src={logoHorizontal} alt="ToolsCrush" className="h-10" width="200" height="40" />
             </Link>
             <p className="text-sm text-muted-foreground">
               Professional PDF and image tools for everyone. Free, fast, and secure.
