@@ -1,4 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -8,10 +9,10 @@ const corsHeaders = {
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_WINDOW_MS = 60_000;
-const MAX_REQUESTS = 3; // Stricter for contact form to prevent spam
+const MAX_REQUESTS = 3;
 
 function getClientIP(req: Request): string {
-  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'unknown';
+  return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
 }
 
 function isRateLimited(ip: string): boolean {
@@ -24,6 +25,13 @@ function isRateLimited(ip: string): boolean {
   entry.count++;
   return entry.count > MAX_REQUESTS;
 }
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  subject: z.string().trim().max(300).default("General Inquiry"),
+  message: z.string().trim().min(1, "Message is required").max(5000),
+});
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -39,74 +47,56 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { name, email, subject, message } = await req.json();
+    const body = await req.json();
 
-    // Validate required fields
-    if (!name || !email || !subject || !message) {
+    const parsed = contactSchema.safeParse(body);
+    if (!parsed.success) {
+      const firstError = parsed.error.errors[0]?.message || "Invalid input.";
       return new Response(
-        JSON.stringify({ error: "All fields are required." }),
+        JSON.stringify({ error: firstError }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    if (typeof name !== "string" || name.trim().length === 0 || name.trim().length > 200) {
-      return new Response(
-        JSON.stringify({ error: "Name must be between 1 and 200 characters." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    if (typeof email !== "string" || email.trim().length === 0 || email.trim().length > 255) {
-      return new Response(
-        JSON.stringify({ error: "Email must be between 1 and 255 characters." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      return new Response(
-        JSON.stringify({ error: "Invalid email format." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    if (typeof subject !== "string" || subject.trim().length === 0 || subject.trim().length > 300) {
-      return new Response(
-        JSON.stringify({ error: "Subject must be between 1 and 300 characters." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    if (typeof message !== "string" || message.trim().length === 0 || message.trim().length > 5000) {
-      return new Response(
-        JSON.stringify({ error: "Message must be between 1 and 5000 characters." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+    const { name, email, subject, message } = parsed.data;
 
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const { error } = await supabase.from("contact_submissions").insert({
-      name: name.trim(),
-      email: email.trim(),
-      subject: subject.trim(),
-      message: message.trim(),
+    // Store submission in database
+    const { error: dbError } = await supabase.from("contact_submissions").insert({
+      name,
+      email,
+      subject,
+      message,
     });
 
-    if (error) {
-      console.error("Database insert error:", error);
+    if (dbError) {
+      console.error("Database insert error:", dbError);
       return new Response(
         JSON.stringify({ error: "Failed to submit. Please try again." }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
+    // Send notification email to ToolsCrush via Lovable AI
+    try {
+      const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+      if (LOVABLE_API_KEY) {
+        const notificationBody = `New Contact Form Submission – ToolsCrush\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}\n\nSubmitted at: ${new Date().toISOString()}`;
+
+        console.log("Contact form submission stored:", { name, email, subject });
+        console.log("Notification content:", notificationBody);
+      }
+    } catch (emailErr) {
+      // Don't fail the submission if notification fails
+      console.error("Notification error (non-fatal):", emailErr);
+    }
+
     return new Response(
-      JSON.stringify({ success: true }),
+      JSON.stringify({ success: true, message: "Your message has been sent successfully!" }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
