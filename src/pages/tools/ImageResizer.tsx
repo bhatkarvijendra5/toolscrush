@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { toolSeoData } from "@/data/toolSeoData";
 import ToolPage from "@/components/ToolPage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
