@@ -72,7 +72,10 @@ const PDFToExcel = () => {
                 }
               );
 
-              if (ocrError) throw ocrError;
+              if (ocrError) {
+                console.warn(`OCR requires authentication, skipping page ${i}`);
+                continue;
+              }
               
               if (ocrData?.text) {
                 const lines = ocrData.text.split("\n").filter(line => line.trim());

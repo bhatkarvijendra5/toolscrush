@@ -1,5 +1,6 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -32,6 +33,30 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Authenticate user via JWT
+  const authHeader = req.headers.get('Authorization');
+  if (!authHeader?.startsWith('Bearer ')) {
+    return new Response(JSON.stringify({ error: 'Authentication required. Please sign in to use this tool.' }), {
+      status: 401,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
+  const supabaseClient = createClient(
+    Deno.env.get('SUPABASE_URL')!,
+    Deno.env.get('SUPABASE_ANON_KEY')!,
+    { global: { headers: { Authorization: authHeader } } }
+  );
+
+  const token = authHeader.replace('Bearer ', '');
+  const { data: claimsData, error: claimsError } = await supabaseClient.auth.getClaims(token);
+  if (claimsError || !claimsData?.claims) {
+    return new Response(JSON.stringify({ error: 'Invalid or expired session. Please sign in again.' }), {
+      status: 401,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
   const clientIP = getClientIP(req);
   if (isRateLimited(clientIP)) {
     return new Response(JSON.stringify({ error: 'Too many requests. Please wait a moment and try again.' }), {
@@ -43,12 +68,24 @@ serve(async (req) => {
   try {
     const { image, outputFormat } = await req.json();
     
-    if (!image) {
-      throw new Error('No image provided');
+    if (!image || typeof image !== 'string') {
+      return new Response(JSON.stringify({ error: 'A valid image is required.' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    // Validate outputFormat
+    const allowedFormats = ['text', 'docx', 'pdf', 'excel'];
+    if (outputFormat && !allowedFormats.includes(outputFormat)) {
+      return new Response(JSON.stringify({ error: 'Invalid output format.' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     // Validate payload size (max ~10MB base64)
-    if (typeof image === 'string' && image.length > 14_000_000) {
+    if (image.length > 14_000_000) {
       return new Response(JSON.stringify({ error: 'Image too large. Maximum size is 10MB.' }), {
         status: 413,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -57,7 +94,11 @@ serve(async (req) => {
 
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) {
-      throw new Error('LOVABLE_API_KEY is not configured');
+      console.error('LOVABLE_API_KEY is not configured');
+      return new Response(JSON.stringify({ error: 'Service temporarily unavailable.' }), {
+        status: 503,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     console.log('Analyzing document with AI...');
@@ -108,16 +149,17 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
-      const errorText = await response.text();
-      console.error('AI gateway error:', response.status, errorText);
-      throw new Error('AI gateway error');
+      console.error('AI gateway error:', response.status);
+      return new Response(JSON.stringify({ error: 'AI processing failed. Please try again.' }), {
+        status: 502,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const data = await response.json();
     const result = JSON.parse(data.choices[0].message.content);
 
     console.log('Document analysis completed successfully');
-    console.log('Detected languages:', result.languages);
 
     return new Response(JSON.stringify({ 
       text: result.text,
@@ -127,8 +169,7 @@ serve(async (req) => {
     });
   } catch (error) {
     console.error('Error in analyze-document function:', error);
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-    return new Response(JSON.stringify({ error: errorMessage }), {
+    return new Response(JSON.stringify({ error: 'An unexpected error occurred. Please try again.' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
