@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { LogOut, Menu } from "lucide-react";
+import { LogOut, Menu, Linkedin, Facebook, Instagram, Twitter, Mail } from "lucide-react";
 import logoHorizontal from "/logo-horizontal.png";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -34,6 +34,13 @@ const Header = () => {
     }
   };
 
+  const socialLinks = [
+    { icon: Linkedin, href: "mailto:toolscrush10@gmail.com", label: "ToolsCrush on LinkedIn" },
+    { icon: Facebook, href: "mailto:toolscrush10@gmail.com", label: "ToolsCrush on Facebook" },
+    { icon: Instagram, href: "mailto:toolscrush10@gmail.com", label: "ToolsCrush on Instagram" },
+    { icon: Twitter, href: "mailto:toolscrush10@gmail.com", label: "ToolsCrush on X (Twitter)" },
+  ];
+
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/tools/merge-pdf", label: "Merge PDF" },
@@ -59,8 +66,15 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Desktop Auth */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Desktop Social + Auth */}
+        <div className="hidden md:flex items-center space-x-2">
+          <div className="flex items-center space-x-1 mr-2">
+            {socialLinks.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="p-1.5 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors">
+                <s.icon className="h-4 w-4" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
           {user ? (
             <>
               <span className="text-sm text-muted-foreground">{user.email}</span>
