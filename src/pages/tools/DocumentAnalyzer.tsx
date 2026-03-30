@@ -65,7 +65,13 @@ const DocumentAnalyzer = () => {
         body: { image: base64Image, outputFormat }
       });
 
-      if (error) throw error;
+      if (error) {
+        if (error.message?.includes('401') || error.message?.includes('Unauthorized')) {
+          toast.error("Please sign in to use the Document Analyzer tool.");
+          return;
+        }
+        throw error;
+      }
 
       if (data?.error) {
         toast.error(data.error);
