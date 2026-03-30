@@ -109,6 +109,13 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
+              <div className="flex items-center space-x-3 border-t pt-4 mt-4">
+                {socialLinks.map((s) => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors">
+                    <s.icon className="h-5 w-5" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
               <div className="border-t pt-4 mt-4">
                 {user ? (
                   <>
