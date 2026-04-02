@@ -129,7 +129,7 @@ All colors MUST be HSL.
   }
 
   .shadow-glow {
-    box-shadow: 0 0 32px hsl(220 90% 50% / 0.3);
+    box-shadow: 0 0 32px hsl(255 70% 55% / 0.3);
   }
 
   .animate-float {
