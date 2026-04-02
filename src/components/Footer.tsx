@@ -25,8 +25,15 @@ const Footer = () => {
               <li><Link to="/tools/pdf-to-word" className="hover:text-primary">PDF to Word</Link></li>
               <li><Link to="/tools/word-to-pdf" className="hover:text-primary">Word to PDF</Link></li>
               <li><Link to="/tools/pdf-to-excel" className="hover:text-primary">PDF to Excel</Link></li>
+              <li><Link to="/tools/pdf-to-ppt" className="hover:text-primary">PDF to PPT</Link></li>
+              <li><Link to="/tools/pdf-to-jpg" className="hover:text-primary">PDF to JPG</Link></li>
+              <li><Link to="/tools/jpg-to-pdf" className="hover:text-primary">JPG to PDF</Link></li>
               <li><Link to="/tools/sign-pdf" className="hover:text-primary">Sign PDF</Link></li>
               <li><Link to="/tools/protect-pdf" className="hover:text-primary">Protect PDF</Link></li>
+              <li><Link to="/tools/unlock-pdf" className="hover:text-primary">Unlock PDF</Link></li>
+              <li><Link to="/tools/watermark-pdf" className="hover:text-primary">Watermark PDF</Link></li>
+              <li><Link to="/tools/add-page-numbers" className="hover:text-primary">Add Page Numbers</Link></li>
+              <li><Link to="/tools/organize-pdf" className="hover:text-primary">Organize PDF</Link></li>
             </ul>
           </nav>
 
@@ -36,16 +43,20 @@ const Footer = () => {
               <li><Link to="/tools/convert-image" className="hover:text-primary">Convert Images</Link></li>
               <li><Link to="/tools/compress-image" className="hover:text-primary">Compress Images</Link></li>
               <li><Link to="/tools/resize-image" className="hover:text-primary">Resize Images</Link></li>
-              <li><Link to="/tools/jpg-to-pdf" className="hover:text-primary">JPG to PDF</Link></li>
-              <li><Link to="/tools/pdf-to-jpg" className="hover:text-primary">PDF to JPG</Link></li>
+            </ul>
+
+            <h3 className="mt-5 mb-3 md:mb-4 font-semibold text-sm md:text-base">Other Tools</h3>
+            <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li><Link to="/tools/document-analyzer" className="hover:text-primary">Document Analyzer</Link></li>
             </ul>
           </nav>
 
-          <nav aria-label="Company Links">
-            <h3 className="mb-3 md:mb-4 font-semibold text-sm md:text-base">Company</h3>
+          <nav aria-label="Sitemap & Company">
+            <h3 className="mb-3 md:mb-4 font-semibold text-sm md:text-base">Sitemap</h3>
             <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li><Link to="/" className="hover:text-primary">Home</Link></li>
               <li><Link to="/about" className="hover:text-primary">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
+              <li><Link to="/contact" className="hover:text-primary">Contact Us</Link></li>
               <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
               <li><Link to="/privacy" className="hover:text-primary">Privacy Policy</Link></li>
             </ul>
