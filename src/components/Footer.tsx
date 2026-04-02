@@ -50,23 +50,23 @@ const Footer = () => {
               <li><Link to="/privacy" className="hover:text-primary">Privacy Policy</Link></li>
             </ul>
             <div className="mt-4 flex space-x-3">
-              <a href="mailto:toolscrush10@gmail.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on LinkedIn">
+              <a href="mailto:official@toolscrush.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on LinkedIn">
                 <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="mailto:toolscrush10@gmail.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on Facebook">
+              <a href="mailto:official@toolscrush.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on Facebook">
                 <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="mailto:toolscrush10@gmail.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on Instagram">
+              <a href="mailto:official@toolscrush.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on Instagram">
                 <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="mailto:toolscrush10@gmail.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on X (Twitter)">
+              <a href="mailto:official@toolscrush.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent transition-colors" aria-label="ToolsCrush on X (Twitter)">
                 <Twitter className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
             <div className="mt-4 flex items-center space-x-2 text-xs md:text-sm">
               <Mail className="h-4 w-4 text-primary" aria-hidden="true" />
-              <a href="mailto:toolscrush10@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                toolscrush10@gmail.com
+              <a href="mailto:official@toolscrush.com" className="text-muted-foreground hover:text-primary transition-colors">
+                official@toolscrush.com
               </a>
             </div>
           </nav>
