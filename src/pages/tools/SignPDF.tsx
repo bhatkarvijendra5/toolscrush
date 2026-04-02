@@ -12,7 +12,7 @@ import { pipeline, env } from '@huggingface/transformers';
 import { supabase } from "@/integrations/supabase/client";
 
 // Configure PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
 // Configure transformers.js
 env.allowLocalModels = false;
