@@ -11,7 +11,7 @@ import { PDFDocument, rgb, StandardFonts, degrees } from "pdf-lib";
 import { toast } from "sonner";
 import * as pdfjsLib from "pdfjs-dist";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
 type VerticalPosition = "top" | "bottom";
 type HorizontalPosition = "left" | "center" | "right";
