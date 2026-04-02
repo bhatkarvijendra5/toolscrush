@@ -8,97 +8,97 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Grey - Page background */
-    --background: 0 0% 90%;
-    /* Text - Primary text color */
-    --foreground: 0 0% 10%;
+    /* Soft cool white - Page background */
+    --background: 230 25% 95%;
+    /* Deep navy - Primary text */
+    --foreground: 235 45% 15%;
 
-    /* Beige - Card backgrounds */
-    --card: 39 52% 90%;
-    --card-foreground: 0 0% 10%;
+    /* Lavender-tinted white - Card backgrounds */
+    --card: 240 20% 97%;
+    --card-foreground: 235 45% 15%;
 
-    /* Beige - Popover backgrounds */
-    --popover: 39 52% 90%;
-    --popover-foreground: 0 0% 10%;
+    /* Same as card for popovers */
+    --popover: 240 20% 97%;
+    --popover-foreground: 235 45% 15%;
 
-    /* Navy - Primary actions */
-    --primary: 210 30% 15%;
-    --primary-foreground: 39 52% 90%;
-    --primary-hover: 210 30% 20%;
+    /* Logo deep navy - Primary actions */
+    --primary: 240 60% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 240 55% 32%;
 
-    /* Light Grey - Secondary elements */
-    --secondary: 0 0% 90%;
-    --secondary-foreground: 0 0% 10%;
+    /* Soft lavender - Secondary elements */
+    --secondary: 245 30% 92%;
+    --secondary-foreground: 235 45% 15%;
 
-    /* Light Grey - Muted elements */
-    --muted: 0 0% 85%;
-    /* Dark Grey - Secondary text */
-    --muted-foreground: 0 0% 23%;
+    /* Muted lavender-grey */
+    --muted: 235 15% 90%;
+    /* Medium navy-grey - Secondary text */
+    --muted-foreground: 235 20% 40%;
 
-    /* Beige - Accent color */
-    --accent: 39 52% 90%;
-    --accent-foreground: 0 0% 10%;
+    /* Purple-blue accent from logo gradient */
+    --accent: 255 70% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border colors */
-    --border: 0 0% 80%;
-    --input: 0 0% 85%;
-    --ring: 210 30% 15%;
+    /* Border colors - subtle blue-grey */
+    --border: 235 15% 85%;
+    --input: 235 15% 88%;
+    --ring: 255 70% 60%;
 
     --radius: 0.75rem;
 
-    /* Navy-based gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 30% 15%) 0%, hsl(210 30% 25%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(210 30% 15%) 0%, hsl(210 25% 20%) 100%);
-    --shadow-sm: 0 2px 8px -2px hsl(0 0% 10% / 0.08);
-    --shadow-md: 0 8px 24px -4px hsl(0 0% 10% / 0.12);
-    --shadow-lg: 0 16px 48px -8px hsl(0 0% 10% / 0.16);
-    --glass-bg: hsl(39 52% 90% / 0.8);
-    --glass-border: hsl(0 0% 80% / 0.5);
+    /* Logo-inspired gradients: navy → purple-blue */
+    --gradient-primary: linear-gradient(135deg, hsl(240 60% 25%) 0%, hsl(255 70% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 60% 22%) 0%, hsl(260 65% 45%) 100%);
+    --shadow-sm: 0 2px 8px -2px hsl(240 40% 20% / 0.08);
+    --shadow-md: 0 8px 24px -4px hsl(240 40% 20% / 0.12);
+    --shadow-lg: 0 16px 48px -8px hsl(240 40% 20% / 0.16);
+    --glass-bg: hsl(240 20% 97% / 0.8);
+    --glass-border: hsl(235 15% 85% / 0.5);
   }
 
   .dark {
-    /* Navy - Dark mode background */
-    --background: 210 30% 12%;
-    --foreground: 39 52% 90%;
+    /* Deep navy - Dark mode background */
+    --background: 240 50% 8%;
+    --foreground: 230 20% 92%;
 
     /* Darker navy for cards */
-    --card: 210 30% 18%;
-    --card-foreground: 39 52% 90%;
+    --card: 240 45% 13%;
+    --card-foreground: 230 20% 92%;
 
-    --popover: 210 30% 18%;
-    --popover-foreground: 39 52% 90%;
+    --popover: 240 45% 13%;
+    --popover-foreground: 230 20% 92%;
 
-    /* Beige as primary in dark mode */
-    --primary: 39 52% 90%;
-    --primary-foreground: 210 30% 15%;
-    --primary-hover: 39 52% 85%;
+    /* Purple-blue accent as primary in dark mode */
+    --primary: 255 70% 65%;
+    --primary-foreground: 240 50% 8%;
+    --primary-hover: 255 65% 58%;
 
-    --secondary: 210 30% 22%;
-    --secondary-foreground: 39 52% 90%;
+    --secondary: 240 40% 18%;
+    --secondary-foreground: 230 20% 92%;
 
-    --muted: 210 30% 22%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 240 35% 18%;
+    --muted-foreground: 230 15% 60%;
 
-    --accent: 39 40% 80%;
-    --accent-foreground: 210 30% 15%;
+    --accent: 255 70% 65%;
+    --accent-foreground: 240 50% 8%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 25% 25%;
-    --input: 210 25% 25%;
-    --ring: 39 52% 90%;
+    --border: 240 35% 22%;
+    --input: 240 35% 22%;
+    --ring: 255 70% 65%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(39 52% 90%) 0%, hsl(39 40% 80%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(210 30% 18%) 0%, hsl(210 30% 22%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(255 70% 65%) 0%, hsl(240 60% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 45% 13%) 0%, hsl(250 50% 20%) 100%);
     --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
     --shadow-md: 0 8px 24px -4px hsl(0 0% 0% / 0.4);
     --shadow-lg: 0 16px 48px -8px hsl(0 0% 0% / 0.5);
-    --glass-bg: hsl(210 30% 18% / 0.8);
-    --glass-border: hsl(210 25% 25% / 0.5);
+    --glass-bg: hsl(240 45% 13% / 0.8);
+    --glass-border: hsl(240 35% 22% / 0.5);
   }
 }
 
@@ -129,7 +129,7 @@ All colors MUST be HSL.
   }
 
   .shadow-glow {
-    box-shadow: 0 0 32px hsl(220 90% 50% / 0.3);
+    box-shadow: 0 0 32px hsl(255 70% 55% / 0.3);
   }
 
   .animate-float {
