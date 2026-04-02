@@ -10,7 +10,7 @@ import * as pdfjsLib from "pdfjs-dist";
 import PptxGenJS from "pptxgenjs";
 import { Checkbox } from "@/components/ui/checkbox";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
 interface PagePreview {
   dataUrl: string;
